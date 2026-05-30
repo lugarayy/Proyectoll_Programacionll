@@ -21,11 +21,11 @@ public:
     Inventory(size_t capacity) : maxCapacity(capacity) {}
     ~Inventory() {}
 
-    bool isFull() const { return maxCapacity >= items.size(); }
+    bool isFull() const { return items.size() >= maxCapacity ; }
     bool isEmpty() const { return items.empty(); }
     size_t getSize() const { return items.size(); }
     size_t getMaxCapacity() const { return maxCapacity; }
-    vector<T>& getItems() const { return items; }
+    const vector<T>& getItems() const { return items; }
 
     void addItem(T item)
     {
@@ -46,6 +46,27 @@ public:
                 return;
             }
         }
+        throw runtime_error("Item not found");
+    }
+
+    T findbyId(int id) const
+    {
+        for (T item : items)
+        {
+            if (item->getId() == id)
+                return item;
+        }
+        return nullptr;
+    }
+
+    //se usa typename por que es un template
+    typename vector<T>::iterator begin() { return items.begin(); }
+    typename vector<T>::iterator end() { return items.end(); }
+
+    friend ostream& operator<<(ostream& os, const Inventory<T>& inventory)
+    {
+        os << "Inventory: " << inventory.items.size() << " - " << inventory.maxCapacity;
+        return os;
     }
 };
 
