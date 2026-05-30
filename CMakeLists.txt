@@ -17,4 +17,14 @@ add_executable(Proyectoll_Programacionll main.cpp
         KeyCard.cpp
         KeyCard.h
         Inventory.cpp
-        Inventory.h)
+        Inventory.h
+        Entity.h
+        Character.cpp
+        Character.h
+        Threat.h
+        DefectiveRobot.cpp
+        DefectiveRobot.h
+        OxygenLeak.cpp
+        OxygenLeak.h
+        Logger.cpp
+        Logger.h)
