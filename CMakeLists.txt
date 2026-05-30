@@ -15,4 +15,6 @@ add_executable(Proyectoll_Programacionll main.cpp
         RepairKit.cpp
         RepairKit.h
         KeyCard.cpp
-        KeyCard.h)
+        KeyCard.h
+        Inventory.cpp
+        Inventory.h)

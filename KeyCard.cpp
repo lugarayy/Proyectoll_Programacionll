@@ -11,7 +11,7 @@ KeyCard::KeyCard(int id, const string& name, const string& accessLevel) : Item(i
 void KeyCard::use(Character& character)
 {
    // character.addKeyCard(accessLevel);
-   cout  << "Using KeyCard: +" << accessLevel << " oxygen" << endl;
+   cout  << "Using KeyCard: +" << accessLevel << " to the room" << endl;
 
 }
 
