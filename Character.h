@@ -11,11 +11,11 @@
 class Character : public Entity {
     public:
     Character();
-    Character(std::string name);
-    string getName() const override;
-    void setName(std::string name) const;
-    void interact() const override;
-    void pickUpItem(const Item& item);
+    Character(std::string name, int health, int oxygen, size_t inventoryCapacity);
+    std::string getName() const override;
+    void setName(const std::string& name);
+    void interact() override;
+    void pickUpItem(Item* item);
     void move();
     ~Character() override;
 private:

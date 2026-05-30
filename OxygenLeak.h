@@ -9,8 +9,10 @@
 class OxygenLeak : public Threat{
     public:
     OxygenLeak();
-    void activate() override;
     ~OxygenLeak() override;
+    void interact();
+    std::string getName() const;
+    void activate();
 };
 
 

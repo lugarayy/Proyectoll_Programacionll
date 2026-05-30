@@ -8,9 +8,8 @@
 
 class Entity {
 public:
-    virtual void interact() const=0;
+    virtual void interact() =0;
     virtual std::string getName() const=0;
-    virtual void setName() const=0;
     virtual ~Entity() = default;
 protected:
     std::string name;

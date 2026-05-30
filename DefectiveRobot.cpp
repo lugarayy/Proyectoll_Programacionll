@@ -4,10 +4,13 @@
 
 #include "DefectiveRobot.h"
 
-DefectiveRobot::DefectiveRobot() {
+DefectiveRobot::DefectiveRobot() : Threat() {
+    name = "Defective Robot";
+    damage = 0;
 }
 
 void DefectiveRobot::activate() {
+     damage = 15;
 }
 
 DefectiveRobot::~DefectiveRobot() {

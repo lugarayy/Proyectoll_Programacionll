@@ -6,13 +6,19 @@
 #define PROYECTOLL_PROGRAMACIONLL_LOGGER_H
 //#include "ReportGenerator.h"
 #include <string>
+#include <fstream>
 
 class Logger {
 public:
-    void log(const  std::string& message);
+    void log(const std::string& message);
     static Logger& getInstance();
+    Logger(const Logger&) = delete;
+    Logger& operator=(const Logger&) = delete;
 private:
     Logger();
+    ~Logger();
+
+    std::ofstream logFile;
 };
 
 
