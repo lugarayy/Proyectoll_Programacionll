@@ -6,21 +6,17 @@
 #define PROYECTOLL_PROGRAMACIONLL_ITEM_H
 
 #include <iostream>
+
+#include "Entity.h"
 using namespace std;
 
 class Character;
 
-class Item
+class Item : public Entity
 {
-protected:
-    int id;
-    string name;
 public:
-    Item(int id, const string &name);
-    virtual ~Item();
-
-    int getId() const;
-    string getName() const;
+    Item(int id, const string &name) : Entity(id, name) {}
+    virtual ~Item() = default;
 
     virtual void use(Character& character) = 0;
     virtual string getType() const = 0;
@@ -28,7 +24,11 @@ public:
     Item(const Item &item) = delete;
     Item& operator=(const Item &item) = delete;
 
-    friend ostream& operator<<(ostream &os, const Item &item);
+    friend ostream& operator<<(ostream &os, const Item &item)
+    {
+        os << "Item: " << item.id << " - " << item.name;
+        return os;
+    }
 };
 
 

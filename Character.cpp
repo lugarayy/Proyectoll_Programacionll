@@ -6,19 +6,14 @@
 #include <iostream>
 #include <utility>
 
-Character::Character() : Entity(), health(100), oxygen(100), inventory(10) {
-    name = "Player";
-    currentRoom = nullptr;
-}
+Character::Character() : Entity(0,"Player"), health(100), oxygen(100), inventory(10), currentRoom(nullptr) {}
 
 Character::Character(std::string name, int health, int oxygen, size_t inventoryCapacity)
-    : Entity(), health(health), oxygen(oxygen), inventory(inventoryCapacity), currentRoom(nullptr) {
-    this->name = std::move(name);
-}
+    : Entity(0,std::move(name)), health(health), oxygen(oxygen), inventory(inventoryCapacity), currentRoom(nullptr) {}
 
-std::string Character::getName() const {
+/*std::string Character::getName() const {
     return name;
-}
+}*/
 
 void Character::setName(const std::string& name) {
     this->name = name;
@@ -61,7 +56,7 @@ void Character::restoreHealth(int healthRestore) {
     health += healthRestore;
 }
 
-bool Character::isAlive() {
+bool Character::isAlive() const {
     if (health <= 0 || oxygen <= 0) {
         return false;
     }

@@ -5,13 +5,22 @@
 #ifndef PROYECTOLL_PROGRAMACIONLL_ENTITY_H
 #define PROYECTOLL_PROGRAMACIONLL_ENTITY_H
 #include <string>
+#include <iostream>
 
 class Entity {
 public:
-    virtual void interact() =0;
-    virtual std::string getName() const=0;
+    Entity(int id,const std::string& name) : id(id), name(name) {};
+    virtual void interact() = 0;
+    virtual std::string getName() const { return name; };
+    int getId() const { return id;};
     virtual ~Entity() = default;
+    friend std::ostream& operator<<(std::ostream& os, const Entity& entity)
+    {
+        os << "Entity: " << entity.getId() << " - : " << entity.getName();
+        return os;
+    }
 protected:
+    int id;
     std::string name;
 };
 

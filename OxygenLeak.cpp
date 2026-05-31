@@ -4,23 +4,22 @@
 
 #include "OxygenLeak.h"
 
-OxygenLeak::OxygenLeak() : Threat() {
-    damage = 0;
-    name = "Oxygen Leak";
-}
+OxygenLeak::OxygenLeak(int id, const std::string& name, int damage) : Threat(id, name, damage) {}
 
-void OxygenLeak::activate() {
-    damage = 5;
-}
+void OxygenLeak::interact()
+{
 
-OxygenLeak::~OxygenLeak() {
-}
-
-void OxygenLeak::interact()  {
-    std::cout << "Oxygen Leak interact" << std::endl;
+    std::cout << "Oxygen leak interact" << std::endl;
     this->activate();
 }
 
-std::string OxygenLeak::getName() const {
-    return name;
+void OxygenLeak::activate()
+{
+    std::cout << name << " is leaking oxygen, Damage:" << damage << std::endl;
 }
+
+std::string OxygenLeak::getType() const
+{
+    return "Oxygen leak";
+}
+

@@ -3,6 +3,7 @@
 //
 
 #include "OxygenTank.h"
+#include "Character.h"
 
 OxygenTank::OxygenTank(int id, const string& name, int restore) : Item(id,name), restore(restore) {}
 
@@ -20,4 +21,9 @@ string OxygenTank::getType() const
 int OxygenTank::getRestore() const
 {
     return restore;
+}
+
+void OxygenTank::interact()
+{
+    cout << "You found a Oxygen Tank" << endl;
 }

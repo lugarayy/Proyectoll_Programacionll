@@ -6,7 +6,6 @@
 #define PROYECTOLL_PROGRAMACIONLL_OXYGENTANK_H
 
 #include "Item.h"
-//#include "Character.h"
 
 class OxygenTank : public Item
 {
@@ -17,6 +16,7 @@ public:
     void use(Character& character) override;
     string getType() const override;
     int getRestore() const;
+    void interact() override;
 };
 
 

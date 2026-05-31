@@ -6,7 +6,6 @@
 #define PROYECTOLL_PROGRAMACIONLL_KEYCARD_H
 
 #include "Item.h"
-//#include "Character.h"
 
 class KeyCard : public Item
 {
@@ -17,6 +16,7 @@ public:
     void use(Character& character) override;
     string getType() const override;
     string getAccessLevel() const;
+    void interact() override;
 };
 
 

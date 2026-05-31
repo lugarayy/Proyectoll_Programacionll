@@ -1,17 +1,24 @@
 //
 // Created by Jose on 30/5/2026.
 //
+//damage 15
 
 #include "DefectiveRobot.h"
 
-DefectiveRobot::DefectiveRobot() : Threat() {
-    name = "Defective Robot";
-    damage = 0;
+DefectiveRobot::DefectiveRobot(int id, const std::string& name, int damage) : Threat(id,name,damage){}
+
+void DefectiveRobot::activate()
+{
+    std::cout << "Attacking, Damage: " << damage << std::endl;
 }
 
-void DefectiveRobot::activate() {
-     damage = 15;
+void DefectiveRobot::interact()
+{
+    std::cout << "Defective Robot interact" << std::endl;
+    this->activate();
 }
 
-DefectiveRobot::~DefectiveRobot() {
+std::string DefectiveRobot::getType() const
+{
+    return "Defective Robot";
 }

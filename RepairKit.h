@@ -6,7 +6,6 @@
 #define PROYECTOLL_PROGRAMACIONLL_REPAIRKIT_H
 
 #include "Item.h"
-//#include "Character.h"
 
 class RepairKit : public Item
 {
@@ -17,6 +16,7 @@ public:
     void use(Character& character) override;
     string getType() const override;
     int getRestore() const;
+    void interact() override;
 };
 
 

@@ -3,6 +3,7 @@
 //
 
 #include "RepairKit.h"
+#include "Character.h"
 
 RepairKit::RepairKit(int id, const string& name, int restore) : Item(id, name), restore(restore) {}
 
@@ -20,4 +21,9 @@ string RepairKit::getType() const
 int RepairKit::getRestore() const
 {
     return restore;
+}
+
+void RepairKit::interact()
+{
+    cout << "You found a Repair Kit" << endl;
 }

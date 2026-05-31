@@ -9,16 +9,20 @@
 
 class Threat : public Entity {
 public:
-    Threat() { name = "Threat"; }
-    virtual void activate() =0;
-    ~Threat() override = default;
+    Threat(int id, const std::string& name, int damage) : Entity(id,name), damage(damage) {}
+    virtual ~Threat() = default;
+
+    virtual void activate() = 0;
+    virtual std::string getType() const = 0;
+
     void interact() override {
         std::cout << "Threat activated: " << name << " (damage " << damage << ")" << std::endl;
     }
-    std::string getName() const override { return name; }
+
     int getDamage() const { return damage; }
+
 protected:
-   int damage = 0;
+   int damage;
 };
 
 

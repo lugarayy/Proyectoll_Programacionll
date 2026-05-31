@@ -7,10 +7,13 @@
 #include "Threat.h"
 
 class DefectiveRobot : public Threat {
-    public:
-    DefectiveRobot();
+public:
+    DefectiveRobot(int id, const std::string& name, int damage);
+    ~DefectiveRobot() = default;
+
     void activate() override;
-    ~DefectiveRobot() override;
+    void interact() override;
+    std::string getType() const override;
 
 };
 

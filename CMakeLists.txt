@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(Proyectoll_Programacionll main.cpp
         Room.cpp
         Room.h
-        Item.cpp
         Item.h
         Station.cpp
         Station.h
