@@ -26,5 +26,11 @@ add_executable(Proyectoll_Programacionll main.cpp
         DefectiveRobot.h
         OxygenLeak.cpp
         OxygenLeak.h
+        ReportGenerator.cpp
+        ReportGenerator.h
         Logger.cpp
-        Logger.h)
+        Logger.h
+        SimulationEngine.cpp
+        SimulationEngine.h
+        ReportGenerator.cpp
+        ReportGenerator.h)

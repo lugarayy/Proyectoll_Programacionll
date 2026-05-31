@@ -7,6 +7,7 @@
 #include "Item.h"
 #include "Entity.h"
 #include "Inventory.h"
+#include "Room.h"
 
 class Character : public Entity {
     public:
@@ -16,12 +17,18 @@ class Character : public Entity {
     void setName(const std::string& name);
     void interact() override;
     void pickUpItem(Item* item);
-    void move();
+    void move(Room* nextRoom);
+    void takeDamage(int damage);
+    void restoreOxygen(int oxygen);
+    void restoreHealth(int health);
+    bool isAlive();
+    Room* getCurrentRoom() const;
     ~Character() override;
 private:
     int health;
     int oxygen;
     Inventory<Item*> inventory;
+    Room* currentRoom;
 };
 
 

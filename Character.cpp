@@ -8,10 +8,11 @@
 
 Character::Character() : Entity(), health(100), oxygen(100), inventory(10) {
     name = "Player";
+    currentRoom = nullptr;
 }
 
 Character::Character(std::string name, int health, int oxygen, size_t inventoryCapacity)
-    : Entity(), health(health), oxygen(oxygen), inventory(inventoryCapacity) {
+    : Entity(), health(health), oxygen(oxygen), inventory(inventoryCapacity), currentRoom(nullptr) {
     this->name = std::move(name);
 }
 
@@ -41,9 +42,34 @@ void Character::pickUpItem(Item* item) {
     }
 }
 
-void Character::move() {
-    std::cout << name << " moved." << std::endl;
+void Character::move(Room* nextRoom) {
+    currentRoom = nextRoom;
 }
 
-Character::~Character() {
+void Character::takeDamage(int damage) {
+    if (damage<0) return;
+    health -= damage;
 }
+
+void Character::restoreOxygen(int oxygenRestore) {
+    if (oxygenRestore<0) return; {}
+    oxygen += oxygenRestore;
+}
+
+void Character::restoreHealth(int healthRestore) {
+    if (healthRestore<0) return;
+    health += healthRestore;
+}
+
+bool Character::isAlive() {
+    if (health <= 0 || oxygen <= 0) {
+        return false;
+    }
+    return true;
+}
+
+Room* Character::getCurrentRoom() const {
+    return currentRoom;
+}
+
+Character::~Character() {}

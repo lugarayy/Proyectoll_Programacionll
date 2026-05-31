@@ -16,6 +16,7 @@ public:
         std::cout << "Threat activated: " << name << " (damage " << damage << ")" << std::endl;
     }
     std::string getName() const override { return name; }
+    int getDamage() const { return damage; }
 protected:
    int damage = 0;
 };
