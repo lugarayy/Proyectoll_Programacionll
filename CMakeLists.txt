@@ -32,4 +32,6 @@ add_executable(Proyectoll_Programacionll main.cpp
         SimulationEngine.cpp
         SimulationEngine.h
         ReportGenerator.cpp
-        ReportGenerator.h)
+        ReportGenerator.h
+        WorldLoader.cpp
+        WorldLoader.h)
