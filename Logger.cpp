@@ -18,7 +18,7 @@ Logger & Logger::getInstance() {
 }
 
 Logger::Logger() {
-	logFile.open("simulation.log", std::ios::app);
+	logFile.open("simulation.log", std::ios::out);
 	if (!logFile.is_open()) {
 		std::cerr << "Warning: could not open simulation.log" << std::endl;
 	}

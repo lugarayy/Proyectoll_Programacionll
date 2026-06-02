@@ -2,8 +2,8 @@
            FINAL REPORT
 ------------------uwu-------------------
 
-Generated at: Tue Jun 02 03:19:50 2026
-Turns taken: 4
+Generated at: Tue Jun 02 03:29:26 2026
+Turns taken: 19
 Result: Success
 Final state: Character escaped the station!
 
@@ -13,32 +13,129 @@ Final state: Character escaped the station!
   Turn 1 begins.
   Character moved to room: Control Room
   Combat: Broken Sentinel dealt 15 damage.
-  Combat: Ventilation Failure reduced oxygen by 8.
+  Combat: Player dodged Ventilation Failure.
   Picked up: Security Card (Escape item)
   Moved to: Engine Bay
   
 === End of Turn 1 ===
-  Room: Engine Bay (ID:2) | HP: 85 | O2: 92 | Inventory: 1/10
+  Room: Engine Bay (ID:2) | HP: 85 | O2: 100 | Inventory: 1/10
   Turn 2 begins.
   Combat: Cracked Pipe reduced oxygen by 10.
   Picked up: Small Tank (Restores O2)
   Picked up: Advanced Kit (Restores HP)
-  Moved to: Control Room
+  Moved to: Medical Bay
   
 === End of Turn 2 ===
-  Room: Control Room (ID:1) | HP: 85 | O2: 82 | Inventory: 3/10
+  Room: Medical Bay (ID:3) | HP: 85 | O2: 90 | Inventory: 3/10
   Turn 3 begins.
-  Combat: Player dodged Broken Sentinel.
-  Combat: Ventilation Failure reduced oxygen by 8.
-  Moved to: Escape Pod
+  Combat: Player dodged Rogue Drone.
+  Picked up: Basic Kit (Restores HP)
+  Picked up: Large Tank (Restores O2)
+  Moved to: Engine Bay
   
 === End of Turn 3 ===
-  Room: Escape Pod (ID:4) | HP: 85 | O2: 74 | Inventory: 3/10
+  Room: Engine Bay (ID:2) | HP: 85 | O2: 90 | Inventory: 5/10
   Turn 4 begins.
+  Combat: Cracked Pipe reduced oxygen by 10.
+  Moved to: Medical Bay
+  
+=== End of Turn 4 ===
+  Room: Medical Bay (ID:3) | HP: 85 | O2: 80 | Inventory: 5/10
+  Turn 5 begins.
+  Combat: Rogue Drone dealt 20 damage.
+  Moved to: Engine Bay
+  
+=== End of Turn 5 ===
+  Room: Engine Bay (ID:2) | HP: 65 | O2: 80 | Inventory: 5/10
+  Turn 6 begins.
+  Combat: Cracked Pipe reduced oxygen by 10.
+  Moved to: Medical Bay
+  
+=== End of Turn 6 ===
+  Room: Medical Bay (ID:3) | HP: 65 | O2: 70 | Inventory: 5/10
+  Turn 7 begins.
+  Combat: Rogue Drone dealt 20 damage.
+  Moved to: Engine Bay
+  
+=== End of Turn 7 ===
+  Room: Engine Bay (ID:2) | HP: 45 | O2: 70 | Inventory: 5/10
+  Turn 8 begins.
+  Combat: Player dodged Cracked Pipe.
+  Moved to: Medical Bay
+  
+=== End of Turn 8 ===
+  Room: Medical Bay (ID:3) | HP: 45 | O2: 70 | Inventory: 5/10
+  Turn 9 begins.
+  Combat: Rogue Drone dealt 20 damage.
+  Moved to: Engine Bay
+  
+=== End of Turn 9 ===
+  Room: Engine Bay (ID:2) | HP: 25 | O2: 70 | Inventory: 5/10
+  Turn 10 begins.
+  Combat: Cracked Pipe reduced oxygen by 10.
+  Moved to: Control Room
+  
+=== End of Turn 10 ===
+  Room: Control Room (ID:1) | HP: 25 | O2: 60 | Inventory: 5/10
+  Turn 11 begins.
+  Combat: Broken Sentinel dealt 15 damage.
+  Combat: Ventilation Failure reduced oxygen by 8.
+  Used Repair Kit to recover HP.
+  Moved to: Engine Bay
+  
+=== End of Turn 11 ===
+  Room: Engine Bay (ID:2) | HP: 50 | O2: 52 | Inventory: 4/10
+  Turn 12 begins.
+  Combat: Cracked Pipe reduced oxygen by 10.
+  Moved to: Control Room
+  
+=== End of Turn 12 ===
+  Room: Control Room (ID:1) | HP: 50 | O2: 42 | Inventory: 4/10
+  Turn 13 begins.
+  Combat: Broken Sentinel dealt 15 damage.
+  Combat: Ventilation Failure reduced oxygen by 8.
+  Moved to: Engine Bay
+  
+=== End of Turn 13 ===
+  Room: Engine Bay (ID:2) | HP: 35 | O2: 34 | Inventory: 4/10
+  Turn 14 begins.
+  Combat: Player dodged Cracked Pipe.
+  Moved to: Control Room
+  
+=== End of Turn 14 ===
+  Room: Control Room (ID:1) | HP: 35 | O2: 34 | Inventory: 4/10
+  Turn 15 begins.
+  Combat: Broken Sentinel dealt 15 damage.
+  Combat: Ventilation Failure reduced oxygen by 8.
+  Used Repair Kit to recover HP.
+  Moved to: Engine Bay
+  
+=== End of Turn 15 ===
+  Room: Engine Bay (ID:2) | HP: 40 | O2: 26 | Inventory: 3/10
+  Turn 16 begins.
+  Combat: Cracked Pipe reduced oxygen by 10.
+  Used Oxygen Tank to recover O2.
+  Moved to: Medical Bay
+  
+=== End of Turn 16 ===
+  Room: Medical Bay (ID:3) | HP: 40 | O2: 46 | Inventory: 2/10
+  Turn 17 begins.
+  Combat: Rogue Drone dealt 20 damage.
+  Moved to: Engine Bay
+  
+=== End of Turn 17 ===
+  Room: Engine Bay (ID:2) | HP: 20 | O2: 46 | Inventory: 2/10
+  Turn 18 begins.
+  Combat: Cracked Pipe reduced oxygen by 10.
+  Moved to: Escape Pod
+  
+=== End of Turn 18 ===
+  Room: Escape Pod (ID:4) | HP: 20 | O2: 36 | Inventory: 2/10
+  Turn 19 begins.
   Combat: Haywire Turret dealt 25 damage.
   Character used Security Card to escape from Escape Pod!
   
-=== End of Turn 4 ===
-  Room: Escape Pod (ID:4) | HP: 60 | O2: 74 | Inventory: 3/10
+=== End of Turn 19 ===
+  Room: Escape Pod (ID:4) | HP: -5 | O2: 36 | Inventory: 2/10
   Character escaped the station successfully!
 ========================================
