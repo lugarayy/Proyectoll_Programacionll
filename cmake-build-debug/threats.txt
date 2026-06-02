@@ -1,0 +1,5 @@
+1;1;DefectiveRobot;Broken Sentinel;15
+2;2;OxygenLeak;Cracked Pipe;10
+3;3;DefectiveRobot;Rogue Drone;20
+1;4;OxygenLeak;Ventilation Failure;8
+4;5;DefectiveRobot;Haywire Turret;25
