@@ -3,9 +3,7 @@
 //
 
 #include "SimulationEngine.h"
-
 #include <cmath>
-
 #include "Threat.h"
 #include "OxygenTank.h"
 #include "RepairKit.h"
@@ -54,6 +52,7 @@ void SimulationEngine::run() {
                         continue;
                     }
                     threat->interact();
+                    //threat->activate();
 
                     const int roll = std::rand() % 100;
                     if (roll < dodgePercent) {
@@ -136,37 +135,37 @@ void SimulationEngine::run() {
                     }
                 }
             }
-
-            printTurnStats();
-            currentTurns++;
         }
 
-        if (escaped) {
-            logEvent("Character escaped the station successfully!");
-            updateSummary(currentTurns, "Character escaped the station!", true);
-            return;
-        }
-
-        if (!currentCharacter->isAlive()) {
-            logEvent("Character has been defeated.");
-            updateSummary(currentTurns, "Simulation ended: character defeated", false);
-            return;
-        }
-
-        if (currentStation->getRooms().empty()) {
-            logEvent("No rooms in the station.");
-            updateSummary(currentTurns, "Simulation ended: no rooms", false);
-            return;
-        }
-
-        if (currentTurns >= maxTurns) {
-            logEvent("Maximum turns reached.");
-            updateSummary(currentTurns, "Simulation ended: max turns reached", false);
-            return;
-        }
-        logEvent("Simulation ended.");
-        updateSummary(currentTurns, "Simulation ended", false);
+        printTurnStats();
+        currentTurns++;
     }
+
+    if (escaped) {
+        logEvent("Character escaped the station successfully!");
+        updateSummary(currentTurns, "Character escaped the station!", true);
+        return;
+    }
+
+    if (!currentCharacter->isAlive()) {
+        logEvent("Character has been defeated.");
+        updateSummary(currentTurns, "Simulation ended: character defeated", false);
+        return;
+    }
+
+    if (currentStation->getRooms().empty()) {
+        logEvent("No rooms in the station.");
+        updateSummary(currentTurns, "Simulation ended: no rooms", false);
+        return;
+    }
+
+    if (currentTurns >= maxTurns) {
+        logEvent("Maximum turns reached.");
+        updateSummary(currentTurns, "Simulation ended: max turns reached", false);
+        return;
+    }
+    logEvent("Simulation ended.");
+    updateSummary(currentTurns, "Simulation ended", false);
 }
 
 bool SimulationEngine::isSimulationOver() const {

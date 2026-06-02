@@ -18,15 +18,11 @@ private:
 public:
     Station(const string& name);
     ~Station();
-
     void addRoom(Room* room);
     Room* getRoomById(int id) const;
-
     vector<Room*> getRooms() const;
     string getName() const;
-
     void printMap() const;
-
     //iterador q recorre las salas del juego
     //el iterador ya viene incluido en vector :O
     vector<Room*>::iterator begin();

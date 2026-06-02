@@ -20,9 +20,7 @@ class Character : public Entity {
     void pickUpItem(Item* item);
     void move(Room* nextRoom);
     void takeDamage(int damage);
-
     void reduceOxygen(int damage);
-
     void restoreOxygen(int oxygen);
     void restoreHealth(int health);
     bool isAlive() const;

@@ -11,14 +11,10 @@ class Threat : public Entity {
 public:
     Threat(int id, const std::string& name, int damage) : Entity(id,name), damage(damage) {}
     virtual ~Threat() = default;
-
     virtual void activate() = 0;
     virtual std::string getType() const = 0;
-
     void interact() override { }
-
     int getDamage() const { return damage; }
-
 protected:
    int damage;
 };
