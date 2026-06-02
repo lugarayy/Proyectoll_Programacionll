@@ -33,6 +33,11 @@ private:
 
     static Item* createItem(int id, const string& type,const string& name,int restore,const string& accessLevel);
     static Threat* createThreat(int id, const string& type, const string& name, int damage);
+
+    // NUEVO -> sobrescribe las conexiones cargadas del archivo rooms.txt
+    // con un grafo aleatorio que garantiza que todos los cuartos sean alcanzables.
+    // Se llama desde loadStation() despues de loadRooms().
+    static void randomizeConnections(Station* station);
 public:
     static Station* loadStation(const string& rooms,const string& items,const string& threats);
 };

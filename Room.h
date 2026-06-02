@@ -34,6 +34,7 @@ public:
 
     void addConnection(Room* room);
     vector<Room*> getConnections() const;
+    void clearConnections();
 
     void addItem(Item* item);
     void addThreat(Threat* threat);

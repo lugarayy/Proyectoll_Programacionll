@@ -15,9 +15,7 @@ public:
     virtual void activate() = 0;
     virtual std::string getType() const = 0;
 
-    void interact() override {
-        std::cout << "Threat activated: " << name << " (damage " << damage << ")" << std::endl;
-    }
+    void interact() override { }
 
     int getDamage() const { return damage; }
 

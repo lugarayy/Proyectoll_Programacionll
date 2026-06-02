@@ -10,7 +10,6 @@ RepairKit::RepairKit(int id, const string& name, int restore) : Item(id, name), 
 void RepairKit::use(Character& character)
 {
     character.restoreHealth(restore);
-    cout << "Using RepairKit: +" << restore << " health" << endl;
 }
 
 string RepairKit::getType() const
@@ -25,5 +24,5 @@ int RepairKit::getRestore() const
 
 void RepairKit::interact()
 {
-    cout << "You found a Repair Kit" << endl;
+    // Silencioso: SimulationEngine maneja el logging vía logEvent()
 }

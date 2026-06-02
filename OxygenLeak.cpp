@@ -8,18 +8,17 @@ OxygenLeak::OxygenLeak(int id, const std::string& name, int damage) : Threat(id,
 
 void OxygenLeak::interact()
 {
-
-    std::cout << "Oxygen leak interact" << std::endl;
+    // Silencioso: SimulationEngine maneja el logging vía logEvent()
     this->activate();
 }
 
 void OxygenLeak::activate()
 {
-    std::cout << name << " is leaking oxygen, Damage:" << damage << std::endl;
+    // Silencioso: SimulationEngine maneja el logging vía logEvent()
 }
 
 std::string OxygenLeak::getType() const
 {
-    return "Oxygen leak";
+    return "Oxygen Leak";
 }
 

@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "Character.h"
 #include "Station.h"
 #include "SimulationEngine.h"
@@ -21,12 +23,19 @@ int main() {
     delete station;
     return 0;*/
 
+    // Seedeamos rand() una vez al inicio del programa.
+    // Esto es necesario para que randomizeConnections() genere mapas diferentes
+    // en cada ejecucion (no solo SimulationEngine que ya tenia su propio seed).
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
+
     try {
         Station* station = WorldLoader::loadStation(
             "rooms.txt",
             "items.txt",
             "threats.txt"
         );
+
+        station->printMap();
 
         Character* character = new Character("Player", 100, 100, 10);
         SimulationEngine* engine = new SimulationEngine(station, character, 50, 4);

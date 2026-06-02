@@ -2,52 +2,145 @@
            FINAL REPORT
 ------------------uwu-------------------
 
-Generated at: Mon Jun 01 21:53:00 2026
-Turns taken: 10
-Result: Failure
-Final state: Simulation ended: character defeated
+Generated at: Tue Jun 02 02:53:25 2026
+Turns taken: 18
+Result: Success
+Final state: Character escaped the station!
 
 ========================================
           SIMULATION LOG
 ========================================
   Turn 1 begins.
   Character moved to room: Control Room
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Ventilation Failure dealt 8 damage.
-  Picked up: Security Card
+  Combat: Broken Sentinel dealt 12 damage.
   Moved to: Engine Bay
+  
+=== End of Turn 1 ===
+  Room: Engine Bay (ID:2) | HP: 88 | O2: 100 | Inventory: 0/10
+  Simulation ended.
   Turn 2 begins.
-  Combat: Cracked Pipe dealt 10 damage.
-  Picked up: Small Tank
-  Picked up: Advanced Kit
-  Moved to: Control Room
+  Combat: Cracked Pipe reduced oxygen by 8.
+  Picked up: Small Tank (Restores O2)
+  Picked up: Emergency Kit (Restores HP)
+  Moved to: Corridor A
+  
+=== End of Turn 2 ===
+  Room: Corridor A (ID:3) | HP: 88 | O2: 92 | Inventory: 2/10
+  Simulation ended.
   Turn 3 begins.
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Player dodged Ventilation Failure.
-  Moved to: Engine Bay
+  Combat: Player dodged Patrol Bot.
+  Picked up: Basic Kit (Restores HP)
+  Picked up: Spare Tank (Restores O2)
+  Moved to: Medical Bay
+  
+=== End of Turn 3 ===
+  Room: Medical Bay (ID:6) | HP: 88 | O2: 92 | Inventory: 4/10
+  Simulation ended.
   Turn 4 begins.
-  Combat: Cracked Pipe dealt 10 damage.
-  Moved to: Control Room
+  Combat: Player dodged Ventilation Fault.
+  Picked up: Standard Kit (Restores HP)
+  Moved to: Command Center
+  
+=== End of Turn 4 ===
+  Room: Command Center (ID:10) | HP: 88 | O2: 92 | Inventory: 5/10
+  Simulation ended.
   Turn 5 begins.
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Ventilation Failure dealt 8 damage.
-  Used RepairKit in emergency.
+  Combat: Player dodged Commander Unit.
+  Picked up: Command Override (Escape item)
   Moved to: Engine Bay
+  
+=== End of Turn 5 ===
+  Room: Engine Bay (ID:2) | HP: 88 | O2: 92 | Inventory: 6/10
+  Simulation ended.
   Turn 6 begins.
-  Combat: Cracked Pipe dealt 10 damage.
-  Moved to: Control Room
+  Combat: Player dodged Cracked Pipe.
+  Moved to: Corridor A
+  
+=== End of Turn 6 ===
+  Room: Corridor A (ID:3) | HP: 88 | O2: 92 | Inventory: 6/10
+  Simulation ended.
   Turn 7 begins.
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Ventilation Failure dealt 8 damage.
-  Moved to: Engine Bay
+  Combat: Patrol Bot dealt 15 damage.
+  Moved to: Medical Bay
+  
+=== End of Turn 7 ===
+  Room: Medical Bay (ID:6) | HP: 73 | O2: 92 | Inventory: 6/10
+  Simulation ended.
   Turn 8 begins.
-  Combat: Cracked Pipe dealt 10 damage.
-  Moved to: Control Room
+  Combat: Player dodged Ventilation Fault.
+  Moved to: Command Center
+  
+=== End of Turn 8 ===
+  Room: Command Center (ID:10) | HP: 73 | O2: 92 | Inventory: 6/10
+  Simulation ended.
   Turn 9 begins.
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Player dodged Ventilation Failure.
+  Combat: Commander Unit dealt 25 damage.
   Moved to: Engine Bay
+  
+=== End of Turn 9 ===
+  Room: Engine Bay (ID:2) | HP: 48 | O2: 92 | Inventory: 6/10
+  Simulation ended.
   Turn 10 begins.
-  Combat: Cracked Pipe dealt 10 damage.
+  Combat: Player dodged Cracked Pipe.
+  Moved to: Corridor A
+  
+=== End of Turn 10 ===
+  Room: Corridor A (ID:3) | HP: 48 | O2: 92 | Inventory: 6/10
+  Simulation ended.
+  Turn 11 begins.
+  Combat: Patrol Bot dealt 15 damage.
+  Moved to: Engine Bay
+  
+=== End of Turn 11 ===
+  Room: Engine Bay (ID:2) | HP: 33 | O2: 92 | Inventory: 6/10
+  Simulation ended.
+  Turn 12 begins.
+  Combat: Cracked Pipe reduced oxygen by 8.
+  Moved to: Control Room
+  
+=== End of Turn 12 ===
+  Room: Control Room (ID:1) | HP: 33 | O2: 84 | Inventory: 6/10
+  Simulation ended.
+  Turn 13 begins.
+  Combat: Player dodged Broken Sentinel.
+  Moved to: Engine Bay
+  
+=== End of Turn 13 ===
+  Room: Engine Bay (ID:2) | HP: 33 | O2: 84 | Inventory: 6/10
+  Simulation ended.
+  Turn 14 begins.
+  Combat: Cracked Pipe reduced oxygen by 8.
+  Moved to: Corridor A
+  
+=== End of Turn 14 ===
+  Room: Corridor A (ID:3) | HP: 33 | O2: 76 | Inventory: 6/10
+  Simulation ended.
+  Turn 15 begins.
+  Combat: Player dodged Patrol Bot.
+  Moved to: Engine Bay
+  
+=== End of Turn 15 ===
+  Room: Engine Bay (ID:2) | HP: 33 | O2: 76 | Inventory: 6/10
+  Simulation ended.
+  Turn 16 begins.
+  Combat: Cracked Pipe reduced oxygen by 8.
+  Moved to: Control Room
+  
+=== End of Turn 16 ===
+  Room: Control Room (ID:1) | HP: 33 | O2: 68 | Inventory: 6/10
+  Simulation ended.
+  Turn 17 begins.
+  Combat: Player dodged Broken Sentinel.
   Moved to: Escape Pod
+  
+=== End of Turn 17 ===
+  Room: Escape Pod (ID:4) | HP: 33 | O2: 68 | Inventory: 6/10
+  Simulation ended.
+  Turn 18 begins.
+  Combat: Player dodged Minor Leak.
+  Character used Command Override to escape from Escape Pod!
+  
+=== End of Turn 18 ===
+  Room: Escape Pod (ID:4) | HP: 33 | O2: 68 | Inventory: 6/10
+  Character escaped the station successfully!
 ========================================

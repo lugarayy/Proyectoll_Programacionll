@@ -3,6 +3,9 @@
 //
 
 #include "SimulationEngine.h"
+
+#include <cmath>
+
 #include "Threat.h"
 #include "OxygenTank.h"
 #include "RepairKit.h"
@@ -10,6 +13,11 @@
 #include <cstdlib>
 #include <ctime>
 #include <string>
+
+const string RESET = "\033[0m";
+const string ROJO = "\033[31m";
+const string VERDE = "\033[32m";
+const string AZUL = "\033[34m";
 
 SimulationEngine::SimulationEngine(Station* station, Character* character, int maxTurns, int escapeRoomId)
     : currentCharacter(character), currentStation(station), currentTurns(0), maxTurns(maxTurns),
@@ -46,17 +54,21 @@ void SimulationEngine::run() {
                         continue;
                     }
                     threat->interact();
-                    //threat->activate();
 
                     const int roll = std::rand() % 100;
                     if (roll < dodgePercent) {
                         logEvent("Combat: " + currentCharacter->getName() + " dodged " + threat->getName() + ".");
                         continue;
                     }
-
-                    currentCharacter->takeDamage(threat->getDamage());
-                    logEvent("Combat: " + threat->getName() + " dealt " + std::to_string(threat->getDamage()) + " damage.");
-                }
+                    if (threat->getType() == "Oxygen Leak") {
+                        currentCharacter->reduceOxygen(threat->getDamage());
+                        logEvent("Combat: " + threat->getName() + " reduced oxygen by " + std::to_string(threat->getDamage()) + ".");
+                    }
+                    if (threat->getType()== "Defective Robot") {
+                        currentCharacter->takeDamage(threat->getDamage());
+                        logEvent("Combat: " + threat->getName() + " dealt " + std::to_string(threat->getDamage()) + " damage.");
+                    }
+                } // fin del for de amenazas
 
                 // Agarrar los items de la habitacion luego de amenazas
                 auto roomItems = room->getItems();
@@ -65,7 +77,13 @@ void SimulationEngine::run() {
                     if (currentCharacter->getInventory().isFull()) break;
                     currentCharacter->pickUpItem(item);
                     room->removeItem(item);
-                    logEvent("Picked up: " + item->getName());
+                    if (item->getType() == "KeyCard") {
+                        logEvent("Picked up: "+ item->getName() + " (Escape item)");
+                    } if (item->getType() == "RepairKit") {
+                        logEvent("Picked up: "+ item->getName() + " (Restores HP)");
+                    } if (item->getType() == "OxygenTank") {
+                        logEvent("Picked up: "+ item->getName() +" (Restores O2)");
+                    }
                 }
 
                 // Usar items de emergencia para no morir
@@ -76,7 +94,7 @@ void SimulationEngine::run() {
                         if (kit != nullptr) {
                             kit->use(*currentCharacter);
                             inv.removeItem(*it);
-                            logEvent("Used RepairKit in emergency.");
+                            logEvent("Used Repair Kit to recover HP.");
                             break;
                         }
                     }
@@ -89,7 +107,7 @@ void SimulationEngine::run() {
                         if (tank != nullptr) {
                             tank->use(*currentCharacter);
                             inv.removeItem(*it);
-                            logEvent("Used OxygenTank in emergency.");
+                            logEvent("Used Oxygen Tank to recover O2.");
                             break;
                         }
                     }
@@ -118,42 +136,37 @@ void SimulationEngine::run() {
                     }
                 }
             }
+
+            printTurnStats();
+            currentTurns++;
         }
 
-        currentTurns++;
-    }
+        if (escaped) {
+            logEvent("Character escaped the station successfully!");
+            updateSummary(currentTurns, "Character escaped the station!", true);
+            return;
+        }
 
-    if (escaped) {
-        updateSummary(currentTurns, "Character escaped the station!", true);
-        return;
-    }
+        if (!currentCharacter->isAlive()) {
+            logEvent("Character has been defeated.");
+            updateSummary(currentTurns, "Simulation ended: character defeated", false);
+            return;
+        }
 
-    if (currentCharacter == nullptr) {
-        updateSummary(currentTurns, "Simulation ended: no character", false);
-        return;
-    }
+        if (currentStation->getRooms().empty()) {
+            logEvent("No rooms in the station.");
+            updateSummary(currentTurns, "Simulation ended: no rooms", false);
+            return;
+        }
 
-    if (!currentCharacter->isAlive()) {
-        updateSummary(currentTurns, "Simulation ended: character defeated", false);
-        return;
+        if (currentTurns >= maxTurns) {
+            logEvent("Maximum turns reached.");
+            updateSummary(currentTurns, "Simulation ended: max turns reached", false);
+            return;
+        }
+        logEvent("Simulation ended.");
+        updateSummary(currentTurns, "Simulation ended", false);
     }
-
-    if (currentStation == nullptr) {
-        updateSummary(currentTurns, "Simulation ended: no station", false);
-        return;
-    }
-
-    if (currentStation->getRooms().empty()) {
-        updateSummary(currentTurns, "Simulation ended: no rooms", false);
-        return;
-    }
-
-    if (currentTurns >= maxTurns) {
-        updateSummary(currentTurns, "Simulation ended: max turns reached", false);
-        return;
-    }
-
-    updateSummary(currentTurns, "Simulation ended", false);
 }
 
 bool SimulationEngine::isSimulationOver() const {
@@ -181,4 +194,19 @@ void SimulationEngine::updateSummary(int turnsTaken, const std::string& finalSta
 void SimulationEngine::logEvent(const std::string& message) {
     Logger::getInstance().log(message);
     summary.eventLog.push_back(message);
+}
+
+void SimulationEngine::printTurnStats() {
+    if (currentCharacter == nullptr) return;
+    Room* room = currentCharacter->getCurrentRoom();
+    std::string roomInfo = "N/A";
+    if (room != nullptr) {
+        roomInfo = room->getName() + " (ID:" + std::to_string(room->getId()) + ")";
+    }
+    logEvent("\n=== End of Turn " + std::to_string(currentTurns + 1) + " ===");
+    logEvent("Room: " + roomInfo +
+             " | HP: " + std::to_string(currentCharacter->getHealth()) +
+             " | O2: " + std::to_string(currentCharacter->getOxygen()) +
+             " | Inventory: " + std::to_string(currentCharacter->getInventory().getSize()) +
+             "/" + std::to_string(currentCharacter->getInventory().getMaxCapacity()));
 }

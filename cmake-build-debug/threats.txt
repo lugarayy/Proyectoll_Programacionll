@@ -1,5 +1,10 @@
-1;1;DefectiveRobot;Broken Sentinel;15
-2;2;OxygenLeak;Cracked Pipe;10
-3;3;DefectiveRobot;Rogue Drone;20
-1;4;OxygenLeak;Ventilation Failure;8
-4;5;DefectiveRobot;Haywire Turret;25
+1;1;DefectiveRobot;Broken Sentinel;12
+2;2;OxygenLeak;Cracked Pipe;8
+3;3;DefectiveRobot;Patrol Bot;15
+4;4;OxygenLeak;Minor Leak;5
+5;5;DefectiveRobot;Agricultural Guard;14
+6;6;OxygenLeak;Ventilation Fault;9
+7;7;DefectiveRobot;Storage Drone;16
+8;8;OxygenLeak;Pressure Valve;11
+9;9;DefectiveRobot;Core Protector;22
+10;10;DefectiveRobot;Commander Unit;25

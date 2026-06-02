@@ -26,6 +26,7 @@ public:
 private:
     void updateSummary(int turnsTaken, const std::string& finalState, bool success);
     void logEvent(const std::string& message);
+    void printTurnStats();
     Character* currentCharacter;
     Station* currentStation;
     int currentTurns;

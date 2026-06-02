@@ -10,7 +10,6 @@ OxygenTank::OxygenTank(int id, const string& name, int restore) : Item(id,name),
 void OxygenTank::use(Character& character)
 {
     character.restoreOxygen(restore);
-    cout  << "Using OxygenTank: +" << restore << " oxygen" << endl;
 }
 
 string OxygenTank::getType() const
@@ -25,5 +24,5 @@ int OxygenTank::getRestore() const
 
 void OxygenTank::interact()
 {
-    cout << "You found a Oxygen Tank" << endl;
+    // Silencioso: SimulationEngine maneja el logging vía logEvent()
 }

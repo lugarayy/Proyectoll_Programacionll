@@ -21,7 +21,5 @@ string KeyCard::getAccessLevel() const
    return accessLevel;
 }
 
-void KeyCard::interact()
-{
-   cout << "You found a keyCard" << endl;
-}
+void KeyCard::interact(){}
+

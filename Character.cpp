@@ -31,7 +31,6 @@ void Character::pickUpItem(Item* item) {
 
     try {
         inventory.addItem(item);
-        std::cout << "Picked up: " << item->getName() << std::endl;
     } catch (const std::runtime_error& e) {
         std::cout << "Cannot pick up " << item->getName() << ": " << e.what() << std::endl;
     }
@@ -44,6 +43,10 @@ void Character::move(Room* nextRoom) {
 void Character::takeDamage(int damage) {
     if (damage<0) return;
     health -= damage;
+}
+void Character::reduceOxygen(int damage) {
+    if (damage<0) return;
+    oxygen -= damage;
 }
 
 void Character::restoreOxygen(int oxygenRestore) {

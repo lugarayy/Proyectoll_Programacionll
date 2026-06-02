@@ -39,6 +39,33 @@ string Station::getName() const
     return name;
 }
 
+void Station::printMap() const //Se anniadio mapita
+{
+    std::cout << "\n========== STATION MAP ==========" << std::endl;
+    std::cout << "Station: " << name << " (" << rooms.size() << " rooms)" << std::endl;
+    std::cout << "================================\n" << std::endl;
+
+    for (const Room* room : rooms) {
+        if (room == nullptr) continue;
+
+        std::cout << "[Room " << room->getId() << "] " << room->getName() << std::endl;
+        std::cout << "  Oxygen: " << room->getOxygen() << " | Energy: " << room->getEnergy() << std::endl;
+        std::cout << "  Items: " << room->getItems().size() << " | Threats: " << room->getThreats().size() << std::endl;
+
+        const auto connections = room->getConnections();
+        if (!connections.empty()) {
+            std::cout << "  Connections: ";
+            for (size_t i = 0; i < connections.size(); ++i) {
+                std::cout << connections[i]->getId();
+                if (i < connections.size() - 1) std::cout << ", ";
+            }
+            std::cout << std::endl;
+        }
+        std::cout << std::endl;
+    }
+    std::cout << "================================\n" << std::endl;
+}
+
 vector<Room*>::iterator Station::begin()
 {
     return rooms.begin();

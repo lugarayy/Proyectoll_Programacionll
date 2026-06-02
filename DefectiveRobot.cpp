@@ -9,12 +9,11 @@ DefectiveRobot::DefectiveRobot(int id, const std::string& name, int damage) : Th
 
 void DefectiveRobot::activate()
 {
-    std::cout << "Attacking, Damage: " << damage << std::endl;
+    // Silencioso: SimulationEngine maneja el logging vía logEvent()
 }
 
 void DefectiveRobot::interact()
 {
-    std::cout << "Defective Robot interact" << std::endl;
     this->activate();
 }
 

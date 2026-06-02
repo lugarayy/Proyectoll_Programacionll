@@ -97,3 +97,8 @@ void Room::clearItems()
 {
     items.clear();
 }
+
+void Room::clearConnections()
+{
+    connections.clear();
+}
