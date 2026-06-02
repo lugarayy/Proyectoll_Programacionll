@@ -9,12 +9,7 @@ KeyCard::KeyCard(int id, const string& name, const string& accessLevel) : Item(i
 {
 }
 
-void KeyCard::use(Character& character)
-{
-   // character.addKeyCard(accessLevel);
-   cout  << "Using KeyCard: Unlocking " << accessLevel << " to the room" << endl;
-
-}
+void KeyCard::use(Character &character) { } // No hay ningun uso pa esto jujeji, la victoria se decide por tenerla en el inventario y llegar a la habitacion que la necesita
 
 string KeyCard::getType() const
 {

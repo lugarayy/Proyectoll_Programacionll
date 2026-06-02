@@ -47,7 +47,7 @@ void Character::takeDamage(int damage) {
 }
 
 void Character::restoreOxygen(int oxygenRestore) {
-    if (oxygenRestore<0) return; {}
+    if (oxygenRestore<0) return;
     oxygen += oxygenRestore;
 }
 
@@ -65,6 +65,18 @@ bool Character::isAlive() const {
 
 Room* Character::getCurrentRoom() const {
     return currentRoom;
+}
+
+Inventory<Item*>& Character::getInventory() {
+    return inventory;
+}
+
+int Character::getHealth() const {
+    return health;
+}
+
+int Character::getOxygen() const {
+    return oxygen;
 }
 
 Character::~Character() {}

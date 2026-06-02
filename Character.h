@@ -24,8 +24,11 @@ class Character : public Entity {
     void restoreHealth(int health);
     bool isAlive() const;
     Room* getCurrentRoom() const;
-
+    Inventory<Item*>& getInventory();
+    int getHealth() const;
+    int getOxygen() const;
     ~Character() override;
+
 private:
     int health;
     int oxygen;

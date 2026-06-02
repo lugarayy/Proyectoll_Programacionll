@@ -13,21 +13,25 @@ struct SimulationSummary {
     int turnsTaken;
     bool success;
     std::string finalState;
+    std::vector<std::string> eventLog;
 };
 
 class SimulationEngine {
 public:
-    SimulationEngine(Station* station, Character* character, int maxTurns);
+    SimulationEngine(Station *station, Character *character, int maxTurns, int escapeRoomId);
     void run();
     bool isSimulationOver() const;
     const SimulationSummary& getSummary() const;
     ~SimulationEngine();
 private:
     void updateSummary(int turnsTaken, const std::string& finalState, bool success);
+    void logEvent(const std::string& message);
     Character* currentCharacter;
     Station* currentStation;
     int currentTurns;
     int maxTurns;
+    int escapeRoomId;
+    bool escaped;
     SimulationSummary summary;
 };
 

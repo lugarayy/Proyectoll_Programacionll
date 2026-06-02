@@ -4,7 +4,7 @@
 
 #include "Room.h"
 #include "Item.h"
-//#include "Threat.h"
+#include "Threat.h"
 
 Room::Room(int id, const string& name, int oxygen, int energy)
 : id(id), name(name), oxygen(oxygen), energy(energy) {}
@@ -12,7 +12,7 @@ Room::Room(int id, const string& name, int oxygen, int energy)
 Room::~Room()
 {
     for (Item* item : items) delete item;
-    //for (Threat* threat : threats) delete threat;
+    for (Threat* threat : threats) delete threat;
 }
 
 int Room::getId() const

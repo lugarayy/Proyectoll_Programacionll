@@ -16,7 +16,13 @@
 #include <stdexcept>
 using namespace std;
 
-//usando factory method
+// usando factory method
+// el formato podria ser Lu -> (separado por ';'):
+//   rooms.txt:   id;name;oxygen;energy;connectedRoomId1,connectedRoomId2,...
+//   items.txt:   roomId;itemId;type;name;restore_or_accessLevel
+//                types: OxygenTank (restore=int), RepairKit (restore=int), KeyCard (accessLevel=string)
+//   threats.txt: roomId;threatId;type;name;damage
+//                types: DefectiveRobot, OxygenLeak
 class WorldLoader
 {
 private:

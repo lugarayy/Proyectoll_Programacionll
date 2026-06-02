@@ -6,6 +6,7 @@
 #include <fstream>
 #include <stdexcept>
 #include "SimulationEngine.h"
+#include <ctime>
 
 void ReportGenerator::generateReport(const SimulationSummary& summary, const std::string& outputPath) {
     std::ofstream out(outputPath);
@@ -13,9 +14,21 @@ void ReportGenerator::generateReport(const SimulationSummary& summary, const std
         throw std::runtime_error("Cannot open report output file: " + outputPath);
     }
 
-    out << "FINAL REPORT" << std::endl;
-    out << "------uwu-------" << std::endl;
+    const std::time_t now = std::time(nullptr);
+
+    out << "----------------------------------------" << std::endl;
+    out << "           FINAL REPORT" << std::endl;
+    out << "------------------uwu-------------------" << std::endl;
+    out << "\nGenerated at: " << std::asctime(std::localtime(&now));
     out << "Turns taken: " << summary.turnsTaken << std::endl;
-    out << "Success: " << (summary.success ? "Yes" : "No") << std::endl;
+    out << "Result: " << (summary.success ? "Success" : "Failure") << std::endl;
     out << "Final state: " << summary.finalState << std::endl;
+    out << std::endl;
+    out << "========================================" << std::endl;
+    out << "          SIMULATION LOG" << std::endl;
+    out << "========================================" << std::endl;
+    for (const auto& event : summary.eventLog) {
+        out << "  " << event << std::endl;
+    }
+    out << "========================================" << std::endl;
 }

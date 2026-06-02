@@ -9,7 +9,7 @@ OxygenTank::OxygenTank(int id, const string& name, int restore) : Item(id,name),
 
 void OxygenTank::use(Character& character)
 {
-    //character.restoreOxygen(restore);
+    character.restoreOxygen(restore);
     cout  << "Using OxygenTank: +" << restore << " oxygen" << endl;
 }
 

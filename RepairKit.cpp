@@ -9,7 +9,7 @@ RepairKit::RepairKit(int id, const string& name, int restore) : Item(id, name), 
 
 void RepairKit::use(Character& character)
 {
-    //character.restoreHealth(restore);
+    character.restoreHealth(restore);
     cout << "Using RepairKit: +" << restore << " health" << endl;
 }
 
