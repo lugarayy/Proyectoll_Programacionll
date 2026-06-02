@@ -1,0 +1,5 @@
+2;1;OxygenTank;Small Tank;30
+3;2;RepairKit;Basic Kit;20
+1;3;KeyCard;Security Card;A
+2;4;RepairKit;Advanced Kit;40
+3;5;OxygenTank;Large Tank;50

@@ -14,6 +14,7 @@
 #include <iostream>
 #include <fstream>
 #include <stdexcept>
+#include <sstream>
 using namespace std;
 
 // usando factory method
@@ -31,7 +32,7 @@ private:
     static void loadThreats (const string& file, Station* station);
 
     static Item* createItem(int id, const string& type,const string& name,int restore,const string& accessLevel);
-    static Threat* creatThreat(int id, const string& type, const string& name, int damage);
+    static Threat* createThreat(int id, const string& type, const string& name, int damage);
 public:
     static Station* loadStation(const string& rooms,const string& items,const string& threats);
 };

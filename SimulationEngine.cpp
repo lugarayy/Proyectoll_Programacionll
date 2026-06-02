@@ -46,7 +46,7 @@ void SimulationEngine::run() {
                         continue;
                     }
                     threat->interact();
-                    threat->activate();
+                    //threat->activate();
 
                     const int roll = std::rand() % 100;
                     if (roll < dodgePercent) {
@@ -166,8 +166,7 @@ bool SimulationEngine::isSimulationOver() const {
     return false;
 }
 
-SimulationEngine::~SimulationEngine() {
-}
+SimulationEngine::~SimulationEngine() {}
 
 const SimulationSummary& SimulationEngine::getSummary() const {
     return summary;

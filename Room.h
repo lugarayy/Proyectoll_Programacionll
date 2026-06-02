@@ -43,7 +43,7 @@ public:
 
     bool operator==(const Room& room) const;
     friend ostream& operator<<(ostream& os, const Room& room); //en vez de tostring, muestra los datos con operador
-
+    void clearItems();
 };
 
 

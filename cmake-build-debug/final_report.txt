@@ -2,12 +2,52 @@
            FINAL REPORT
 ------------------uwu-------------------
 
-Generated at: Mon Jun 01 19:29:59 2026
-Turns taken: 0
+Generated at: Mon Jun 01 21:53:00 2026
+Turns taken: 10
 Result: Failure
-Final state: Simulation ended: no rooms
+Final state: Simulation ended: character defeated
 
 ========================================
           SIMULATION LOG
 ========================================
+  Turn 1 begins.
+  Character moved to room: Control Room
+  Combat: Broken Sentinel dealt 15 damage.
+  Combat: Ventilation Failure dealt 8 damage.
+  Picked up: Security Card
+  Moved to: Engine Bay
+  Turn 2 begins.
+  Combat: Cracked Pipe dealt 10 damage.
+  Picked up: Small Tank
+  Picked up: Advanced Kit
+  Moved to: Control Room
+  Turn 3 begins.
+  Combat: Broken Sentinel dealt 15 damage.
+  Combat: Player dodged Ventilation Failure.
+  Moved to: Engine Bay
+  Turn 4 begins.
+  Combat: Cracked Pipe dealt 10 damage.
+  Moved to: Control Room
+  Turn 5 begins.
+  Combat: Broken Sentinel dealt 15 damage.
+  Combat: Ventilation Failure dealt 8 damage.
+  Used RepairKit in emergency.
+  Moved to: Engine Bay
+  Turn 6 begins.
+  Combat: Cracked Pipe dealt 10 damage.
+  Moved to: Control Room
+  Turn 7 begins.
+  Combat: Broken Sentinel dealt 15 damage.
+  Combat: Ventilation Failure dealt 8 damage.
+  Moved to: Engine Bay
+  Turn 8 begins.
+  Combat: Cracked Pipe dealt 10 damage.
+  Moved to: Control Room
+  Turn 9 begins.
+  Combat: Broken Sentinel dealt 15 damage.
+  Combat: Player dodged Ventilation Failure.
+  Moved to: Engine Bay
+  Turn 10 begins.
+  Combat: Cracked Pipe dealt 10 damage.
+  Moved to: Escape Pod
 ========================================

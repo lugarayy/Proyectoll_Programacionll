@@ -92,3 +92,8 @@ ostream& operator<<(ostream& os, const Room& room)
     << " - Threats: " << room.threats.size();
     return os;
 }
+
+void Room::clearItems()
+{
+    items.clear();
+}
