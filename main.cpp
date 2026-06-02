@@ -37,8 +37,8 @@ int main() {
 
         station->printMap();
 
-        Character* character = new Character("Player", 100, 100, 10);
-        SimulationEngine* engine = new SimulationEngine(station, character, 50, 4);
+        auto* character = new Character("Player", 100, 100, 10);
+        auto* engine = new SimulationEngine(station, character, 50, 4);
         engine->run();
 
         ReportGenerator::generateReport(engine->getSummary(), "final_report.txt");

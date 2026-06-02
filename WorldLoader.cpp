@@ -26,9 +26,9 @@ void WorldLoader::loadRooms(const string& file, Station* station)
        {
            tokens.push_back(t);
        }
-       if (tokens.size() < 5) // 5 spaces
+       if (tokens.size() < 4)
        {
-           throw runtime_error("Invalid room name");
+           throw runtime_error("Invalid room format");
        }
 
        //agarra las lineas en las que esta
@@ -36,44 +36,13 @@ void WorldLoader::loadRooms(const string& file, Station* station)
        string name = tokens[1];
        int oxygen = stoi(tokens[2]);
        int energy = stoi(tokens[3]);
-       string connections = tokens[4];
 
        Room* room = new Room(id,name,oxygen,energy);
        station->addRoom(room);
    }
     fileroom.close();
 
-    //connections,cargar salas
-    ifstream fileroom2(file);
-    while (getline(fileroom2,line))
-    {
-        if (line.empty()||line[0] == '#' ) continue;
-
-        stringstream ss(line);
-        string t;
-        vector<string> tokens;
-        while (getline(ss,t,';'))
-        {
-            tokens.push_back(t);
-        }
-
-        int id = stoi(tokens[0]);
-        string connections = tokens[4];
-
-        Room* currentroom = station->getRoomById(id);
-        stringstream sss(connections);
-        string cont;
-        while (getline(sss,cont,','))
-        {
-            int conid = stoi(cont);
-            Room* connRoom = station->getRoomById(conid);
-            if (connRoom != nullptr)
-            {
-                currentroom->addConnection(connRoom);
-            }
-        }
-    }
-    fileroom2.close();
+    // Las conexiones se generan automaticamente en randomizeConnections()
 }
 
 void WorldLoader::loadItems(const string& file, Station* station)

@@ -3,3 +3,10 @@
 3;3;DefectiveRobot;Rogue Drone;20
 1;4;OxygenLeak;Ventilation Failure;8
 4;5;DefectiveRobot;Haywire Turret;25
+5;6;OxygenLeak;Hull Breach;12
+6;7;DefectiveRobot;Malfunctioning Arm;18
+7;8;OxygenLeak;Toxic Spill;14
+8;9;DefectiveRobot;Security Bot;22
+9;10;OxygenLeak;Coolant Leak;10
+10;11;DefectiveRobot;Reactor Guardian;28
+6;12;OxygenLeak;Gas Leak;9

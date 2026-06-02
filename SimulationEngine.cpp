@@ -37,8 +37,12 @@ void SimulationEngine::run() {
             if (currentCharacter->getCurrentRoom() == nullptr) {
                 const auto rooms = currentStation->getRooms();
                 if (!rooms.empty()) {
-                    currentCharacter->move(rooms.front());
-                    logEvent("Character moved to room: " + rooms.front()->getName());
+                    int start = std::rand() % rooms.size();
+                    while (rooms[start]->getId() == escapeRoomId) {
+                        start = std::rand() % rooms.size();
+                    }
+                    currentCharacter->move(rooms[start]);
+                    logEvent("Character moved to room: " + rooms[start]->getName());
                 }
             }
 

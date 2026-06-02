@@ -1,5 +1,12 @@
-2;1;OxygenTank;Small Tank;30
-3;2;RepairKit;Basic Kit;20
-1;3;KeyCard;Security Card;A
-2;4;RepairKit;Advanced Kit;40
-3;5;OxygenTank;Large Tank;50
+2;1;OxygenTank;Small Tank;20
+3;2;RepairKit;Basic Kit;15
+5;3;KeyCard;Security Card;A
+6;4;RepairKit;Advanced Kit;25
+8;5;OxygenTank;Large Tank;30
+1;6;RepairKit;Field Kit;15
+4;7;OxygenTank;Compact Tank;20
+7;8;RepairKit;Medic Kit;20
+9;9;OxygenTank;Reserve Tank;25
+10;10;RepairKit;Emergency Kit;30
+5;11;OxygenTank;Spare Tank;15
+7;12;RepairKit;Patch Kit;10
