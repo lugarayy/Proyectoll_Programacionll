@@ -48,9 +48,11 @@ void Station::printMap() const //Se anniadio mapita
     for (const Room* room : rooms) {
         if (room == nullptr) continue;
 
-        std::cout << "[Room " << room->getId() << "] " << room->getName() << std::endl;
-        std::cout << "  Oxygen: " << room->getOxygen() << " | Energy: " << room->getEnergy() << std::endl;
-        std::cout << "  Items: " << room->getItems().size() << " | Threats: " << room->getThreats().size() << std::endl;
+        //std::cout << "[Room " << room->getId() << "] " << room->getName() << std::endl;
+        //std::cout << "  Oxygen: " << room->getOxygen() << " | Energy: " << room->getEnergy() << std::endl;
+        //std::cout << "  Items: " << room->getItems().size() << " | Threats: " << room->getThreats().size() << std::endl;
+
+        std::cout << *room<<std::endl; //operator<< room
 
         const auto connections = room->getConnections();
         if (!connections.empty()) {

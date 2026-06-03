@@ -84,12 +84,9 @@ bool Room::operator==(const Room& room) const
 
 ostream& operator<<(ostream& os, const Room& room)
 {
-    os << "[Room: " << room.id << "] " << room.name
-    << " - Oxygen: " << room.oxygen
-    << " - Energy: " << room.energy
-    << " - Connections: " << room.connections.size()
-    << " - Items: " << room.items.size()
-    << " - Threats: " << room.threats.size();
+    os << "[Room " << room.id << "] " << room.name << "\n";
+    os << " Oxygen: " << room.oxygen << " | Energy: " << room.energy << "\n";
+    os << " Items: " << room.items.size() << " | Threats: " << room.threats.size();
     return os;
 }
 

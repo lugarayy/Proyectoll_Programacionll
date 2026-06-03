@@ -2,100 +2,155 @@
            FINAL REPORT
 ------------------uwu-------------------
 
-Generated at: Tue Jun 02 03:49:06 2026
-Turns taken: 12
-Result: Failure
-Final state: Simulation ended: character defeated
+Generated at: Tue Jun 02 23:04:20 2026
+Turns taken: 20
+Result: Success
+Final state: Character escaped the station!
 
 ========================================
           SIMULATION LOG
 ========================================
   Turn 1 begins.
-  Character moved to room: Hydroponics
-  Combat: Toxic Spill reduced oxygen by 14.
-  Picked up: Medic Kit (Restores HP)
-  Picked up: Patch Kit (Restores HP)
-  Moved to: Control Room
-  
-=== End of Turn 1 ===
-  Room: Control Room (ID:1) | HP: 100 | O2: 86 | Inventory: 2/10
-  Turn 2 begins.
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Player dodged Ventilation Failure.
-  Picked up: Field Kit (Restores HP)
-  Moved to: Medical Bay
-  
-=== End of Turn 2 ===
-  Room: Medical Bay (ID:3) | HP: 85 | O2: 86 | Inventory: 3/10
-  Turn 3 begins.
-  Combat: Rogue Drone dealt 20 damage.
-  Picked up: Basic Kit (Restores HP)
+  Character moved to room: Communications
+  Combat: Player dodged Security Bot.
+  Picked up: Large Tank (Restores O2)
   Moved to: Reactor Core
   
-=== End of Turn 3 ===
-  Room: Reactor Core (ID:10) | HP: 65 | O2: 86 | Inventory: 4/10
-  Turn 4 begins.
+=== End of Turn 1 ===
+  Room: Reactor Core (ID:10) | HP: 100 | O2: 100 | Inventory: 1/10
+  Turn 2 begins.
   Combat: Reactor Guardian dealt 28 damage.
   Picked up: Emergency Kit (Restores HP)
   Moved to: Medical Bay
   
-=== End of Turn 4 ===
-  Room: Medical Bay (ID:3) | HP: 37 | O2: 86 | Inventory: 5/10
-  Turn 5 begins.
+=== End of Turn 2 ===
+  Room: Medical Bay (ID:3) | HP: 72 | O2: 100 | Inventory: 2/10
+  Turn 3 begins.
   Combat: Rogue Drone dealt 20 damage.
-  Used Repair Kit to recover HP.
-  Moved to: Reactor Core
+  Picked up: Basic Kit (Restores HP)
+  Moved to: Engine Bay
+  
+=== End of Turn 3 ===
+  Room: Engine Bay (ID:2) | HP: 52 | O2: 100 | Inventory: 3/10
+  Turn 4 begins.
+  Combat: Cracked Pipe reduced oxygen by 10.
+  Picked up: Small Tank (Restores O2)
+  Moved to: Laboratory
+  
+=== End of Turn 4 ===
+  Room: Laboratory (ID:6) | HP: 52 | O2: 90 | Inventory: 4/10
+  Turn 5 begins.
+  Combat: Player dodged Malfunctioning Arm.
+  Combat: Player dodged Gas Leak.
+  Picked up: Advanced Kit (Restores HP)
+  Moved to: Engine Bay
   
 === End of Turn 5 ===
-  Room: Reactor Core (ID:10) | HP: 37 | O2: 86 | Inventory: 4/10
+  Room: Engine Bay (ID:2) | HP: 52 | O2: 90 | Inventory: 5/10
   Turn 6 begins.
-  Combat: Reactor Guardian dealt 28 damage.
-  Used Repair Kit to recover HP.
-  Moved to: Medical Bay
+  Combat: Cracked Pipe reduced oxygen by 10.
+  Moved to: Control Room
   
 === End of Turn 6 ===
-  Room: Medical Bay (ID:3) | HP: 19 | O2: 86 | Inventory: 3/10
+  Room: Control Room (ID:1) | HP: 52 | O2: 80 | Inventory: 5/10
   Turn 7 begins.
-  Combat: Rogue Drone dealt 20 damage.
-  Used Repair Kit to recover HP.
-  Moved to: Control Room
+  Combat: Player dodged Broken Sentinel.
+  Combat: Player dodged Ventilation Failure.
+  Picked up: Field Kit (Restores HP)
+  Moved to: Communications
   
 === End of Turn 7 ===
-  Room: Control Room (ID:1) | HP: 14 | O2: 86 | Inventory: 2/10
+  Room: Communications (ID:8) | HP: 52 | O2: 80 | Inventory: 6/10
   Turn 8 begins.
-  Combat: Player dodged Broken Sentinel.
-  Combat: Ventilation Failure reduced oxygen by 8.
-  Used Repair Kit to recover HP.
-  Moved to: Medical Bay
+  Combat: Security Bot dealt 22 damage.
+  Moved to: Reactor Core
   
 === End of Turn 8 ===
-  Room: Medical Bay (ID:3) | HP: 29 | O2: 78 | Inventory: 1/10
+  Room: Reactor Core (ID:10) | HP: 30 | O2: 80 | Inventory: 6/10
   Turn 9 begins.
-  Combat: Rogue Drone dealt 20 damage.
+  Combat: Player dodged Reactor Guardian.
+  Moved to: Cargo Hold
+  
+=== End of Turn 9 ===
+  Room: Cargo Hold (ID:5) | HP: 30 | O2: 80 | Inventory: 6/10
+  Turn 10 begins.
+  Combat: Hull Breach reduced oxygen by 12.
+  Picked up: Security Card (Escape item)
+  Picked up: Spare Tank (Restores O2)
+  Moved to: Reactor Core
+  
+=== End of Turn 10 ===
+  Room: Reactor Core (ID:10) | HP: 30 | O2: 68 | Inventory: 8/10
+  Turn 11 begins.
+  Combat: Reactor Guardian dealt 28 damage.
+  Used Repair Kit to recover HP.
+  Moved to: Communications
+  
+=== End of Turn 11 ===
+  Room: Communications (ID:8) | HP: 32 | O2: 68 | Inventory: 7/10
+  Turn 12 begins.
+  Combat: Security Bot dealt 22 damage.
   Used Repair Kit to recover HP.
   Moved to: Control Room
   
-=== End of Turn 9 ===
-  Room: Control Room (ID:1) | HP: 39 | O2: 78 | Inventory: 0/10
-  Turn 10 begins.
+=== End of Turn 12 ===
+  Room: Control Room (ID:1) | HP: 25 | O2: 68 | Inventory: 6/10
+  Turn 13 begins.
   Combat: Broken Sentinel dealt 15 damage.
   Combat: Ventilation Failure reduced oxygen by 8.
+  Used Repair Kit to recover HP.
+  Moved to: Engine Bay
+  
+=== End of Turn 13 ===
+  Room: Engine Bay (ID:2) | HP: 35 | O2: 60 | Inventory: 5/10
+  Turn 14 begins.
+  Combat: Cracked Pipe reduced oxygen by 10.
+  Moved to: Laboratory
+  
+=== End of Turn 14 ===
+  Room: Laboratory (ID:6) | HP: 35 | O2: 50 | Inventory: 5/10
+  Turn 15 begins.
+  Combat: Malfunctioning Arm dealt 18 damage.
+  Combat: Gas Leak reduced oxygen by 9.
+  Used Repair Kit to recover HP.
+  Moved to: Engine Bay
+  
+=== End of Turn 15 ===
+  Room: Engine Bay (ID:2) | HP: 32 | O2: 41 | Inventory: 4/10
+  Turn 16 begins.
+  Combat: Cracked Pipe reduced oxygen by 10.
   Moved to: Medical Bay
   
-=== End of Turn 10 ===
-  Room: Medical Bay (ID:3) | HP: 24 | O2: 70 | Inventory: 0/10
-  Turn 11 begins.
+=== End of Turn 16 ===
+  Room: Medical Bay (ID:3) | HP: 32 | O2: 31 | Inventory: 4/10
+  Turn 17 begins.
   Combat: Rogue Drone dealt 20 damage.
-  Moved to: Control Room
-  
-=== End of Turn 11 ===
-  Room: Control Room (ID:1) | HP: 4 | O2: 70 | Inventory: 0/10
-  Turn 12 begins.
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Player dodged Ventilation Failure.
   Moved to: Hydroponics
   
-=== End of Turn 12 ===
-  Room: Hydroponics (ID:7) | HP: -11 | O2: 70 | Inventory: 0/10
-  Character has been defeated.
+=== End of Turn 17 ===
+  Room: Hydroponics (ID:7) | HP: 12 | O2: 31 | Inventory: 4/10
+  Turn 18 begins.
+  Combat: Player dodged Toxic Spill.
+  Picked up: Medic Kit (Restores HP)
+  Picked up: Patch Kit (Restores HP)
+  Used Repair Kit to recover HP.
+  Moved to: Medical Bay
+  
+=== End of Turn 18 ===
+  Room: Medical Bay (ID:3) | HP: 32 | O2: 31 | Inventory: 5/10
+  Turn 19 begins.
+  Combat: Player dodged Rogue Drone.
+  Moved to: Escape Pod
+  
+=== End of Turn 19 ===
+  Room: Escape Pod (ID:4) | HP: 32 | O2: 31 | Inventory: 5/10
+  Turn 20 begins.
+  Combat: Haywire Turret dealt 25 damage.
+  Picked up: Compact Tank (Restores O2)
+  Used Repair Kit to recover HP.
+  Character used Security Card to escape from Escape Pod!
+  
+=== End of Turn 20 ===
+  Room: Escape Pod (ID:4) | HP: 17 | O2: 31 | Inventory: 5/10
+  Character escaped the station successfully!
 ========================================
