@@ -16,7 +16,6 @@ public:
     void use(Character& character) override;
     string getType() const override;
     int getRestore() const;
-    void interact() override;
 };
 
 

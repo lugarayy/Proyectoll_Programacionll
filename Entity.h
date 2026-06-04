@@ -10,7 +10,6 @@
 class Entity {
 public:
     Entity(int id,const std::string& name) : id(id), name(name) {};
-    virtual void interact() = 0;
     virtual std::string getName() const { return name; };
     int getId() const { return id;};
     virtual ~Entity() = default;

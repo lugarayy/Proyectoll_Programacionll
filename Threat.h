@@ -6,6 +6,7 @@
 #define PROYECTOLL_PROGRAMACIONLL_THREAT_H
 #include "Entity.h"
 #include <iostream>
+class Character;
 
 class Threat : public Entity {
 public:
@@ -13,7 +14,6 @@ public:
     virtual ~Threat() = default;
     virtual void activate() = 0;
     virtual std::string getType() const = 0;
-    void interact() override { }
     int getDamage() const { return damage; }
 protected:
    int damage;

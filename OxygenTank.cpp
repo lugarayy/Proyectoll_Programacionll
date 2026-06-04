@@ -22,7 +22,3 @@ int OxygenTank::getRestore() const
     return restore;
 }
 
-void OxygenTank::interact()
-{
-    // Silencioso: SimulationEngine maneja el logging vía logEvent()
-}

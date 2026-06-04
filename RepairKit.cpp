@@ -22,7 +22,3 @@ int RepairKit::getRestore() const
     return restore;
 }
 
-void RepairKit::interact()
-{
-    // Silencioso: SimulationEngine maneja el logging vía logEvent()
-}

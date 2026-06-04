@@ -9,7 +9,8 @@ KeyCard::KeyCard(int id, const string& name, const string& accessLevel) : Item(i
 {
 }
 
-void KeyCard::use(Character &character) { } // No hay ningun uso pa esto jujeji, la victoria se decide por tenerla en el inventario y llegar a la habitacion que la necesita
+void KeyCard::use(Character &character) {}
+// No hay ningun uso pa esto jujeji, la victoria se decide por tenerla en el inventario y llegar a la habitacion que la necesita
 
 string KeyCard::getType() const
 {
@@ -21,5 +22,4 @@ string KeyCard::getAccessLevel() const
    return accessLevel;
 }
 
-void KeyCard::interact(){}
 
