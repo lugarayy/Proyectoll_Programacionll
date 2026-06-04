@@ -26,7 +26,7 @@ void WorldLoader::loadRooms(const string& file, Station* station)
        {
            tokens.push_back(t);
        }
-       if (tokens.size() < 4)
+       if (tokens.size() < 2)
        {
            throw runtime_error("Invalid room format");
        }
@@ -34,10 +34,8 @@ void WorldLoader::loadRooms(const string& file, Station* station)
        //agarra las lineas en las que esta
        int id = stoi(tokens[0]);
        string name = tokens[1];
-       int oxygen = stoi(tokens[2]);
-       int energy = stoi(tokens[3]);
 
-       Room* room = new Room(id,name,oxygen,energy);
+       Room* room = new Room(id,name);
        station->addRoom(room);
    }
     fileroom.close();

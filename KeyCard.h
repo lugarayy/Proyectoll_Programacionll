@@ -17,7 +17,7 @@ public:
     void use(Character& character) override;
     std::string getType() const override;
     std::string getAccessLevel() const;
-
+    std::string getDescription() const override;
 };
 
 

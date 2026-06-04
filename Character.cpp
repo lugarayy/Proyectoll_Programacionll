@@ -89,7 +89,7 @@ int Character::getOxygen() const {
 bool Character::tryUseHealthItem() {
     for (size_t i = 0; i < inventory.getSize(); ++i) {
         Item* item = inventory.getItems()[i];
-        if (item == nullptr&& item->getType() == "Repair Kit") {
+        if (item != nullptr&& item->getType() == "Repair Kit") {
             item->use(*this);
             inventory.removeItem(item);
             return true;
@@ -101,7 +101,7 @@ bool Character::tryUseHealthItem() {
 bool Character::tryUseOxygenItem() {
     for (size_t i = 0; i < inventory.getSize(); ++i) {
         Item* item = inventory.getItems()[i];
-        if (item == nullptr && item->getType() == "Oxygen Tank") {
+        if (item != nullptr && item->getType() == "Oxygen Tank") {
             item->use(*this);
             inventory.removeItem(item);
             return true;
@@ -113,7 +113,7 @@ bool Character::tryUseOxygenItem() {
 bool Character::tryUseKeyCard(int escapeRoomId) {
     for (size_t i = 0; i < inventory.getSize(); ++i) {
         Item* item = inventory.getItems()[i];
-        if (item == nullptr && item->getType() == "Key Card") {
+        if (item != nullptr && item->getType() == "KeyCard") {
             item->use(*this);
             inventory.removeItem(item);
             return true;

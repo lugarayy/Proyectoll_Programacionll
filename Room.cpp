@@ -6,8 +6,8 @@
 #include "Item.h"
 #include "Threat.h"
 
-Room::Room(int id, const string& name, int oxygen, int energy)
-: id(id), name(name), oxygen(oxygen), energy(energy) {}
+Room::Room(int id, const string& name)
+: id(id), name(name) {}
 
 Room::~Room()
 {
@@ -23,16 +23,6 @@ int Room::getId() const
 string Room::getName() const
 {
     return name;
-}
-
-int Room::getOxygen() const
-{
-    return oxygen;
-}
-
-int Room::getEnergy() const
-{
-    return energy;
 }
 
 void Room::addConnection(Room* room)
@@ -85,7 +75,6 @@ bool Room::operator==(const Room& room) const
 ostream& operator<<(ostream& os, const Room& room)
 {
     os << "[Room " << room.id << "] " << room.name << "\n";
-    os << " Oxygen: " << room.oxygen << " | Energy: " << room.energy << "\n";
     os << " Items: " << room.items.size() << " | Threats: " << room.threats.size();
     return os;
 }

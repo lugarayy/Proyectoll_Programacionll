@@ -24,13 +24,11 @@ private:
     vector<Item*> items;
     vector<Threat*> threats;
 public:
-    Room(int id, const string& name, int oxygen, int energy);
+    Room(int id, const string& name);
     ~Room();
 
     int getId() const;
     string getName() const;
-    int getOxygen() const;
-    int getEnergy() const;
 
     void addConnection(Room* room);
     vector<Room*> getConnections() const;

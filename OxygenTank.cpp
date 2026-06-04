@@ -14,7 +14,7 @@ void OxygenTank::use(Character& character)
 
 string OxygenTank::getType() const
 {
-    return "OxygenTank";
+    return "Oxygen Tank";
 }
 
 int OxygenTank::getRestore() const
@@ -22,3 +22,6 @@ int OxygenTank::getRestore() const
     return restore;
 }
 
+string OxygenTank::getDescription() const {
+    return " (Restores " + std::to_string(restore) + " oxygen)";
+}

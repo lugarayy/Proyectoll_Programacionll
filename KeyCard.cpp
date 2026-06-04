@@ -32,4 +32,7 @@ string KeyCard::getAccessLevel() const
    return accessLevel;
 }
 
+std::string KeyCard::getDescription() const {
+   return " (Escape Item)";
+}
 

@@ -2,8 +2,8 @@
            FINAL REPORT
 ------------------uwu-------------------
 
-Generated at: Wed Jun 03 19:43:12 2026
-Turns taken: 11
+Generated at: Wed Jun 03 20:01:12 2026
+Turns taken: 9
 Result: Failure
 Final state: Character died due to health reaching zero.
 
@@ -11,79 +11,61 @@ Final state: Character died due to health reaching zero.
           SIMULATION LOG
 ========================================
   Turn 1 begins.
-  Character moved to room: Control Room
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Player dodged Ventilation Failure.
-  Picked up: Field Kit (Restores HP)
-  Moved to: Laboratory
+  Character moved to room: Communications
+  Combat: Security Bot dealt 22 damage.
+  Picked up: Large Tank (Restores 30 oxygen)
+  Moved to: Escape Pod
   === End of Turn 1 ===
 
-  Room: Laboratory (ID:6) | HP: 85 | O2: 100 | Inventory: 1/10
+  Room: Escape Pod (ID:4) | HP: 78 | O2: 100 | Inventory: 1/10
   Turn 2 begins.
-  Combat: Malfunctioning Arm dealt 18 damage.
-  Combat: Gas Leak reduced oxygen by 9.
-  Picked up: Advanced Kit (Restores HP)
-  Moved to: Hydroponics
+  Combat: Player dodged Haywire Turret.
+  Picked up: Compact Tank (Restores 20 oxygen)
+  Moved to: Control Room
   === End of Turn 2 ===
 
-  Room: Hydroponics (ID:7) | HP: 67 | O2: 91 | Inventory: 2/10
+  Room: Control Room (ID:1) | HP: 78 | O2: 100 | Inventory: 2/10
   Turn 3 begins.
-  Combat: Player dodged Toxic Spill.
-  Picked up: Medic Kit (Restores HP)
-  Picked up: Patch Kit (Restores HP)
-  Moved to: Storage Bay
+  Combat: Broken Sentinel dealt 15 damage.
+  Combat: Ventilation Failure reduced oxygen by 8.
+  Picked up: Field Kit (Restores 15 health)
+  Moved to: Escape Pod
   === End of Turn 3 ===
 
-  Room: Storage Bay (ID:9) | HP: 67 | O2: 91 | Inventory: 4/10
+  Room: Escape Pod (ID:4) | HP: 63 | O2: 92 | Inventory: 3/10
   Turn 4 begins.
-  Combat: Coolant Leak reduced oxygen by 10.
-  Picked up: Reserve Tank (Restores O2)
-  Moved to: Hydroponics
+  Combat: Haywire Turret dealt 25 damage.
+  Moved to: Communications
   === End of Turn 4 ===
 
-  Room: Hydroponics (ID:7) | HP: 67 | O2: 81 | Inventory: 5/10
+  Room: Communications (ID:8) | HP: 38 | O2: 92 | Inventory: 3/10
   Turn 5 begins.
-  Combat: Toxic Spill reduced oxygen by 14.
-  Moved to: Cargo Hold
+  Combat: Player dodged Security Bot.
+  Moved to: Escape Pod
   === End of Turn 5 ===
 
-  Room: Cargo Hold (ID:5) | HP: 67 | O2: 67 | Inventory: 5/10
+  Room: Escape Pod (ID:4) | HP: 38 | O2: 92 | Inventory: 3/10
   Turn 6 begins.
-  Combat: Hull Breach reduced oxygen by 12.
-  Picked up: Security Card (Escape item)
-  Picked up: Spare Tank (Restores O2)
-  Moved to: Hydroponics
+  Combat: Haywire Turret dealt 25 damage.
+  Moved to: Medical Bay
   === End of Turn 6 ===
 
-  Room: Hydroponics (ID:7) | HP: 67 | O2: 55 | Inventory: 7/10
+  Room: Medical Bay (ID:3) | HP: 28 | O2: 92 | Inventory: 2/10
   Turn 7 begins.
-  Combat: Toxic Spill reduced oxygen by 14.
-  Moved to: Storage Bay
+  Combat: Player dodged Rogue Drone.
+  Picked up: Basic Kit (Restores 15 health)
+  Moved to: Escape Pod
   === End of Turn 7 ===
 
-  Room: Storage Bay (ID:9) | HP: 67 | O2: 41 | Inventory: 7/10
+  Room: Escape Pod (ID:4) | HP: 28 | O2: 92 | Inventory: 3/10
   Turn 8 begins.
-  Combat: Player dodged Coolant Leak.
-  Moved to: Reactor Core
+  Combat: Haywire Turret dealt 25 damage.
+  Moved to: Medical Bay
   === End of Turn 8 ===
 
-  Room: Reactor Core (ID:10) | HP: 67 | O2: 41 | Inventory: 7/10
+  Room: Medical Bay (ID:3) | HP: 18 | O2: 92 | Inventory: 2/10
   Turn 9 begins.
-  Combat: Reactor Guardian dealt 28 damage.
-  Picked up: Emergency Kit (Restores HP)
-  Moved to: Communications
-  === End of Turn 9 ===
-
-  Room: Communications (ID:8) | HP: 39 | O2: 41 | Inventory: 8/10
-  Turn 10 begins.
-  Combat: Security Bot dealt 22 damage.
-  Picked up: Large Tank (Restores O2)
-  Moved to: Reactor Core
-  === End of Turn 10 ===
-
-  Room: Reactor Core (ID:10) | HP: 17 | O2: 41 | Inventory: 9/10
-  Turn 11 begins.
-  Combat: Reactor Guardian dealt 28 damage.
+  Combat: Rogue Drone dealt 20 damage.
   Character died due to health reaching zero.
   Simulation ended.
 ========================================

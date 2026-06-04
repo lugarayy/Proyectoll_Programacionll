@@ -121,7 +121,7 @@ void SimulationEngine::placeCharacterIfNeeded() {
                     logEvent("Combat: " + threat->getName() + " reduced oxygen by " + std::to_string(threat->getDamage()) + ".");
                 }
                 if (threat->getType()== "Defective Robot") {
-                    currentCharacter->takeDamage(threat->getDamage());
+                   threat->activate(*currentCharacter);
                     logEvent("Combat: " + threat->getName() + " dealt " + std::to_string(threat->getDamage()) + " damage.");
                 }
             }
@@ -135,13 +135,7 @@ void SimulationEngine::collectItems(Room *room) {
         if (currentCharacter->getInventory().isFull()) break;
         currentCharacter->pickUpItem(item);
         room->removeItem(item);
-        if (item->getType() == "KeyCard") {
-            logEvent("Picked up: "+ item->getName() + " (Escape item)");
-        } if (item->getType() == "RepairKit") {
-            logEvent("Picked up: "+ item->getName() + " (Restores HP)");
-        } if (item->getType() == "OxygenTank") {
-            logEvent("Picked up: "+ item->getName() +" (Restores O2)");
-        }
+            logEvent("Picked up: "+ item->getName() + item->getDescription());
     }
 }
 

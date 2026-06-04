@@ -17,7 +17,7 @@ class Item : public Entity
 public:
     Item(int id, const string &name) : Entity(id, name) {}
     ~Item()override=default;
-
+    virtual std::string getDescription() const = 0;
     virtual void use(Character& character) = 0;
 
     string getType() const override { return "Item"; }

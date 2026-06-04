@@ -14,7 +14,7 @@ void RepairKit::use(Character& character)
 
 string RepairKit::getType() const
 {
-    return "RepairKit";
+    return "Repair Kit";
 }
 
 int RepairKit::getRestore() const
@@ -22,3 +22,6 @@ int RepairKit::getRestore() const
     return restore;
 }
 
+string RepairKit::getDescription() const {
+    return " (Restores " + std::to_string(restore) + " health)";
+}
