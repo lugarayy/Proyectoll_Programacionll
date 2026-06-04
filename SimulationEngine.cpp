@@ -5,10 +5,6 @@
 #include "SimulationEngine.h"
 #include <cmath>
 #include "Threat.h"
-#include "OxygenTank.h"
-#include "RepairKit.h"
-#include "KeyCard.h"
-#include <cstdlib>
 #include <ctime>
 #include <string>
 
