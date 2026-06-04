@@ -30,16 +30,18 @@ void SimulationEngine::run() {
         placeCharacterIfNeeded();
         Room* room = currentCharacter->getCurrentRoom();
         processCombat(room);
+        if (simulationEnd()) {
+            logEvent("Simulation ended.");
+            break;
+        }
         collectItems(room);
         useEmergencyItems();
         if (checkEscape(room)) break;
         moveToNextRoom(room);
         printTurnStats();
         currentTurns++;
+
     }
-    if (simulationEnd()) return;
-    logEvent("Simulation ended.");
-    updateSummary(currentTurns, "Simulation ended", false);
 }
 
 bool SimulationEngine::isSimulationOver() const {
@@ -180,8 +182,13 @@ bool SimulationEngine::simulationEnd() {
     }
 
     if (!currentCharacter->isAlive()) {
-        logEvent("Character has been defeated.");
-        updateSummary(currentTurns, "Simulation ended: character defeated", false);
+        if (currentCharacter->getOxygen() <= 0) {
+            logEvent("Character died due to lack of oxygen.");
+            updateSummary(currentTurns+1, "Character died due to lack of oxygen.", false); //+1 para que no aparezca turno 0 en la simulacion
+        } else {
+            logEvent("Character died due to health reaching zero.");
+            updateSummary(currentTurns+1, "Character died due to health reaching zero.", false);
+        }
         return true;
     }
 

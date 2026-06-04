@@ -2,75 +2,88 @@
            FINAL REPORT
 ------------------uwu-------------------
 
-Generated at: Wed Jun 03 19:22:26 2026
-Turns taken: 9
+Generated at: Wed Jun 03 19:43:12 2026
+Turns taken: 11
 Result: Failure
-Final state: Simulation ended: character defeated
+Final state: Character died due to health reaching zero.
 
 ========================================
           SIMULATION LOG
 ========================================
   Turn 1 begins.
-  Character moved to room: Reactor Core
-  Combat: Reactor Guardian dealt 28 damage.
-  Picked up: Emergency Kit (Restores HP)
-  Moved to: Hydroponics
+  Character moved to room: Control Room
+  Combat: Broken Sentinel dealt 15 damage.
+  Combat: Player dodged Ventilation Failure.
+  Picked up: Field Kit (Restores HP)
+  Moved to: Laboratory
   === End of Turn 1 ===
 
-  Room: Hydroponics (ID:7) | HP: 72 | O2: 100 | Inventory: 1/10
+  Room: Laboratory (ID:6) | HP: 85 | O2: 100 | Inventory: 1/10
   Turn 2 begins.
-  Combat: Toxic Spill reduced oxygen by 14.
-  Picked up: Medic Kit (Restores HP)
-  Picked up: Patch Kit (Restores HP)
-  Moved to: Escape Pod
+  Combat: Malfunctioning Arm dealt 18 damage.
+  Combat: Gas Leak reduced oxygen by 9.
+  Picked up: Advanced Kit (Restores HP)
+  Moved to: Hydroponics
   === End of Turn 2 ===
 
-  Room: Escape Pod (ID:4) | HP: 72 | O2: 86 | Inventory: 3/10
+  Room: Hydroponics (ID:7) | HP: 67 | O2: 91 | Inventory: 2/10
   Turn 3 begins.
-  Combat: Haywire Turret dealt 25 damage.
-  Picked up: Compact Tank (Restores O2)
-  Moved to: Cargo Hold
+  Combat: Player dodged Toxic Spill.
+  Picked up: Medic Kit (Restores HP)
+  Picked up: Patch Kit (Restores HP)
+  Moved to: Storage Bay
   === End of Turn 3 ===
 
-  Room: Cargo Hold (ID:5) | HP: 47 | O2: 86 | Inventory: 4/10
+  Room: Storage Bay (ID:9) | HP: 67 | O2: 91 | Inventory: 4/10
   Turn 4 begins.
-  Combat: Hull Breach reduced oxygen by 12.
-  Picked up: Security Card (Escape item)
-  Picked up: Spare Tank (Restores O2)
-  Moved to: Escape Pod
+  Combat: Coolant Leak reduced oxygen by 10.
+  Picked up: Reserve Tank (Restores O2)
+  Moved to: Hydroponics
   === End of Turn 4 ===
 
-  Room: Escape Pod (ID:4) | HP: 47 | O2: 74 | Inventory: 6/10
+  Room: Hydroponics (ID:7) | HP: 67 | O2: 81 | Inventory: 5/10
   Turn 5 begins.
-  Combat: Haywire Turret dealt 25 damage.
+  Combat: Toxic Spill reduced oxygen by 14.
   Moved to: Cargo Hold
   === End of Turn 5 ===
 
-  Room: Cargo Hold (ID:5) | HP: 22 | O2: 74 | Inventory: 6/10
+  Room: Cargo Hold (ID:5) | HP: 67 | O2: 67 | Inventory: 5/10
   Turn 6 begins.
   Combat: Hull Breach reduced oxygen by 12.
-  Moved to: Escape Pod
+  Picked up: Security Card (Escape item)
+  Picked up: Spare Tank (Restores O2)
+  Moved to: Hydroponics
   === End of Turn 6 ===
 
-  Room: Escape Pod (ID:4) | HP: 22 | O2: 62 | Inventory: 6/10
+  Room: Hydroponics (ID:7) | HP: 67 | O2: 55 | Inventory: 7/10
   Turn 7 begins.
-  Combat: Player dodged Haywire Turret.
+  Combat: Toxic Spill reduced oxygen by 14.
   Moved to: Storage Bay
   === End of Turn 7 ===
 
-  Room: Storage Bay (ID:9) | HP: 22 | O2: 62 | Inventory: 6/10
+  Room: Storage Bay (ID:9) | HP: 67 | O2: 41 | Inventory: 7/10
   Turn 8 begins.
-  Combat: Coolant Leak reduced oxygen by 10.
-  Picked up: Reserve Tank (Restores O2)
+  Combat: Player dodged Coolant Leak.
   Moved to: Reactor Core
   === End of Turn 8 ===
 
-  Room: Reactor Core (ID:10) | HP: 22 | O2: 52 | Inventory: 7/10
+  Room: Reactor Core (ID:10) | HP: 67 | O2: 41 | Inventory: 7/10
   Turn 9 begins.
   Combat: Reactor Guardian dealt 28 damage.
-  Moved to: Hydroponics
+  Picked up: Emergency Kit (Restores HP)
+  Moved to: Communications
   === End of Turn 9 ===
 
-  Room: Hydroponics (ID:7) | HP: -6 | O2: 52 | Inventory: 7/10
-  Character has been defeated.
+  Room: Communications (ID:8) | HP: 39 | O2: 41 | Inventory: 8/10
+  Turn 10 begins.
+  Combat: Security Bot dealt 22 damage.
+  Picked up: Large Tank (Restores O2)
+  Moved to: Reactor Core
+  === End of Turn 10 ===
+
+  Room: Reactor Core (ID:10) | HP: 17 | O2: 41 | Inventory: 9/10
+  Turn 11 begins.
+  Combat: Reactor Guardian dealt 28 damage.
+  Character died due to health reaching zero.
+  Simulation ended.
 ========================================
