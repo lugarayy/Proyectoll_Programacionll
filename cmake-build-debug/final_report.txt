@@ -2,8 +2,8 @@
            FINAL REPORT
 ------------------uwu-------------------
 
-Generated at: Wed Jun 03 16:54:10 2026
-Turns taken: 22
+Generated at: Wed Jun 03 19:22:26 2026
+Turns taken: 9
 Result: Failure
 Final state: Simulation ended: character defeated
 
@@ -15,152 +15,62 @@ Final state: Simulation ended: character defeated
   Combat: Reactor Guardian dealt 28 damage.
   Picked up: Emergency Kit (Restores HP)
   Moved to: Hydroponics
-  
-=== End of Turn 1 ===
+  === End of Turn 1 ===
+
   Room: Hydroponics (ID:7) | HP: 72 | O2: 100 | Inventory: 1/10
   Turn 2 begins.
-  Combat: Player dodged Toxic Spill.
+  Combat: Toxic Spill reduced oxygen by 14.
   Picked up: Medic Kit (Restores HP)
   Picked up: Patch Kit (Restores HP)
-  Moved to: Engine Bay
-  
-=== End of Turn 2 ===
-  Room: Engine Bay (ID:2) | HP: 72 | O2: 100 | Inventory: 3/10
-  Turn 3 begins.
-  Combat: Cracked Pipe reduced oxygen by 10.
-  Picked up: Small Tank (Restores O2)
-  Moved to: Storage Bay
-  
-=== End of Turn 3 ===
-  Room: Storage Bay (ID:9) | HP: 72 | O2: 90 | Inventory: 4/10
-  Turn 4 begins.
-  Combat: Player dodged Coolant Leak.
-  Picked up: Reserve Tank (Restores O2)
-  Moved to: Laboratory
-  
-=== End of Turn 4 ===
-  Room: Laboratory (ID:6) | HP: 72 | O2: 90 | Inventory: 5/10
-  Turn 5 begins.
-  Combat: Malfunctioning Arm dealt 18 damage.
-  Combat: Gas Leak reduced oxygen by 9.
-  Picked up: Advanced Kit (Restores HP)
-  Moved to: Storage Bay
-  
-=== End of Turn 5 ===
-  Room: Storage Bay (ID:9) | HP: 54 | O2: 81 | Inventory: 6/10
-  Turn 6 begins.
-  Combat: Coolant Leak reduced oxygen by 10.
-  Moved to: Laboratory
-  
-=== End of Turn 6 ===
-  Room: Laboratory (ID:6) | HP: 54 | O2: 71 | Inventory: 6/10
-  Turn 7 begins.
-  Combat: Malfunctioning Arm dealt 18 damage.
-  Combat: Player dodged Gas Leak.
-  Moved to: Communications
-  
-=== End of Turn 7 ===
-  Room: Communications (ID:8) | HP: 36 | O2: 71 | Inventory: 6/10
-  Turn 8 begins.
-  Combat: Player dodged Security Bot.
-  Picked up: Large Tank (Restores O2)
   Moved to: Escape Pod
-  
-=== End of Turn 8 ===
-  Room: Escape Pod (ID:4) | HP: 36 | O2: 71 | Inventory: 7/10
-  Turn 9 begins.
+  === End of Turn 2 ===
+
+  Room: Escape Pod (ID:4) | HP: 72 | O2: 86 | Inventory: 3/10
+  Turn 3 begins.
   Combat: Haywire Turret dealt 25 damage.
   Picked up: Compact Tank (Restores O2)
-  Used Repair Kit to recover HP.
-  Moved to: Communications
-  
-=== End of Turn 9 ===
-  Room: Communications (ID:8) | HP: 41 | O2: 71 | Inventory: 7/10
-  Turn 10 begins.
-  Combat: Security Bot dealt 22 damage.
-  Used Repair Kit to recover HP.
-  Moved to: Medical Bay
-  
-=== End of Turn 10 ===
-  Room: Medical Bay (ID:3) | HP: 39 | O2: 71 | Inventory: 6/10
-  Turn 11 begins.
-  Combat: Rogue Drone dealt 20 damage.
-  Picked up: Basic Kit (Restores HP)
-  Used Repair Kit to recover HP.
-  Moved to: Engine Bay
-  
-=== End of Turn 11 ===
-  Room: Engine Bay (ID:2) | HP: 29 | O2: 71 | Inventory: 6/10
-  Turn 12 begins.
-  Combat: Player dodged Cracked Pipe.
-  Moved to: Storage Bay
-  
-=== End of Turn 12 ===
-  Room: Storage Bay (ID:9) | HP: 29 | O2: 71 | Inventory: 6/10
-  Turn 13 begins.
-  Combat: Player dodged Coolant Leak.
-  Moved to: Engine Bay
-  
-=== End of Turn 13 ===
-  Room: Engine Bay (ID:2) | HP: 29 | O2: 71 | Inventory: 6/10
-  Turn 14 begins.
-  Combat: Cracked Pipe reduced oxygen by 10.
-  Moved to: Hydroponics
-  
-=== End of Turn 14 ===
-  Room: Hydroponics (ID:7) | HP: 29 | O2: 61 | Inventory: 6/10
-  Turn 15 begins.
-  Combat: Player dodged Toxic Spill.
-  Moved to: Control Room
-  
-=== End of Turn 15 ===
-  Room: Control Room (ID:1) | HP: 29 | O2: 61 | Inventory: 6/10
-  Turn 16 begins.
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Ventilation Failure reduced oxygen by 8.
-  Picked up: Field Kit (Restores HP)
-  Used Repair Kit to recover HP.
-  Moved to: Hydroponics
-  
-=== End of Turn 16 ===
-  Room: Hydroponics (ID:7) | HP: 39 | O2: 53 | Inventory: 6/10
-  Turn 17 begins.
-  Combat: Toxic Spill reduced oxygen by 14.
-  Moved to: Reactor Core
-  
-=== End of Turn 17 ===
-  Room: Reactor Core (ID:10) | HP: 39 | O2: 39 | Inventory: 6/10
-  Turn 18 begins.
-  Combat: Reactor Guardian dealt 28 damage.
-  Used Repair Kit to recover HP.
-  Moved to: Hydroponics
-  
-=== End of Turn 18 ===
-  Room: Hydroponics (ID:7) | HP: 26 | O2: 39 | Inventory: 5/10
-  Turn 19 begins.
-  Combat: Player dodged Toxic Spill.
-  Moved to: Engine Bay
-  
-=== End of Turn 19 ===
-  Room: Engine Bay (ID:2) | HP: 26 | O2: 39 | Inventory: 5/10
-  Turn 20 begins.
-  Combat: Cracked Pipe reduced oxygen by 10.
-  Moved to: Medical Bay
-  
-=== End of Turn 20 ===
-  Room: Medical Bay (ID:3) | HP: 26 | O2: 29 | Inventory: 5/10
-  Turn 21 begins.
-  Combat: Rogue Drone dealt 20 damage.
-  Used Repair Kit to recover HP.
+  Moved to: Cargo Hold
+  === End of Turn 3 ===
+
+  Room: Cargo Hold (ID:5) | HP: 47 | O2: 86 | Inventory: 4/10
+  Turn 4 begins.
+  Combat: Hull Breach reduced oxygen by 12.
+  Picked up: Security Card (Escape item)
+  Picked up: Spare Tank (Restores O2)
   Moved to: Escape Pod
-  
-=== End of Turn 21 ===
-  Room: Escape Pod (ID:4) | HP: 21 | O2: 29 | Inventory: 4/10
-  Turn 22 begins.
+  === End of Turn 4 ===
+
+  Room: Escape Pod (ID:4) | HP: 47 | O2: 74 | Inventory: 6/10
+  Turn 5 begins.
   Combat: Haywire Turret dealt 25 damage.
-  Moved to: Medical Bay
-  
-=== End of Turn 22 ===
-  Room: Medical Bay (ID:3) | HP: -4 | O2: 29 | Inventory: 4/10
+  Moved to: Cargo Hold
+  === End of Turn 5 ===
+
+  Room: Cargo Hold (ID:5) | HP: 22 | O2: 74 | Inventory: 6/10
+  Turn 6 begins.
+  Combat: Hull Breach reduced oxygen by 12.
+  Moved to: Escape Pod
+  === End of Turn 6 ===
+
+  Room: Escape Pod (ID:4) | HP: 22 | O2: 62 | Inventory: 6/10
+  Turn 7 begins.
+  Combat: Player dodged Haywire Turret.
+  Moved to: Storage Bay
+  === End of Turn 7 ===
+
+  Room: Storage Bay (ID:9) | HP: 22 | O2: 62 | Inventory: 6/10
+  Turn 8 begins.
+  Combat: Coolant Leak reduced oxygen by 10.
+  Picked up: Reserve Tank (Restores O2)
+  Moved to: Reactor Core
+  === End of Turn 8 ===
+
+  Room: Reactor Core (ID:10) | HP: 22 | O2: 52 | Inventory: 7/10
+  Turn 9 begins.
+  Combat: Reactor Guardian dealt 28 damage.
+  Moved to: Hydroponics
+  === End of Turn 9 ===
+
+  Room: Hydroponics (ID:7) | HP: -6 | O2: 52 | Inventory: 7/10
   Character has been defeated.
 ========================================

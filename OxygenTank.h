@@ -4,7 +4,7 @@
 
 #ifndef PROYECTOLL_PROGRAMACIONLL_OXYGENTANK_H
 #define PROYECTOLL_PROGRAMACIONLL_OXYGENTANK_H
-
+#include <string>
 #include "Item.h"
 
 class OxygenTank : public Item
@@ -12,9 +12,9 @@ class OxygenTank : public Item
 private:
     int restore;
 public:
-    OxygenTank(int id, const string& name, int restore);
+    OxygenTank(int id, const std::string& name, int restore);
     void use(Character& character) override;
-    string getType() const override;
+    std::string getType() const override;
     int getRestore() const;
 };
 

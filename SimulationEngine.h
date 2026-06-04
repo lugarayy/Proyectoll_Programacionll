@@ -24,6 +24,13 @@ public:
     const SimulationSummary& getSummary() const;
     ~SimulationEngine();
 private:
+    void placeCharacterIfNeeded();
+    void processCombat(Room* room);
+    void collectItems(Room* room);
+    void useEmergencyItems();
+    bool checkEscape(Room* room);
+    void moveToNextRoom(Room* room);
+    bool simulationEnd();
     void updateSummary(int turnsTaken, const std::string& finalState, bool success);
     void logEvent(const std::string& message);
     void printTurnStats();

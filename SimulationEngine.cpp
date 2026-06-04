@@ -12,11 +12,6 @@
 #include <ctime>
 #include <string>
 
-const string RESET = "\033[0m";
-const string ROJO = "\033[31m";
-const string VERDE = "\033[32m";
-const string AZUL = "\033[34m";
-
 SimulationEngine::SimulationEngine(Station* station, Character* character, int maxTurns, int escapeRoomId)
     : currentCharacter(character), currentStation(station), currentTurns(0), maxTurns(maxTurns),
       escapeRoomId(escapeRoomId), escaped(false) {
@@ -32,142 +27,17 @@ void SimulationEngine::run() {
 
     while (!isSimulationOver()) {
         logEvent("Turn " + std::to_string(currentTurns + 1) + " begins.");
-
-        if (currentCharacter != nullptr && currentStation != nullptr) {
-            if (currentCharacter->getCurrentRoom() == nullptr) {
-                const auto rooms = currentStation->getRooms();
-                if (!rooms.empty()) {
-                    int start = std::rand() % rooms.size();
-                    while (rooms[start]->getId() == escapeRoomId) {
-                        start = std::rand() % rooms.size();
-                    }
-                    currentCharacter->move(rooms[start]);
-                    logEvent("Character moved to room: " + rooms[start]->getName());
-                }
-            }
-
-            Room* room = currentCharacter->getCurrentRoom();
-            if (room != nullptr) {
-                // Amenazas
-                const auto threats = room->getThreats();
-                const int dodgePercent = 30;
-                for (Threat* threat : threats) {
-                    if (threat == nullptr) {
-                        continue;
-                    }
-                    threat->interact();
-                    //threat->activate();
-
-                    const int roll = std::rand() % 100;
-                    if (roll < dodgePercent) {
-                        logEvent("Combat: " + currentCharacter->getName() + " dodged " + threat->getName() + ".");
-                        continue;
-                    }
-                    if (threat->getType() == "Oxygen Leak") {
-                        currentCharacter->reduceOxygen(threat->getDamage());
-                        logEvent("Combat: " + threat->getName() + " reduced oxygen by " + std::to_string(threat->getDamage()) + ".");
-                    }
-                    if (threat->getType()== "Defective Robot") {
-                        currentCharacter->takeDamage(threat->getDamage());
-                        logEvent("Combat: " + threat->getName() + " dealt " + std::to_string(threat->getDamage()) + " damage.");
-                    }
-                } // fin del for de amenazas
-
-                // Agarrar los items de la habitacion luego de amenazas
-                auto roomItems = room->getItems();
-                for (Item* item : roomItems) {
-                    if (item == nullptr) continue;
-                    if (currentCharacter->getInventory().isFull()) break;
-                    currentCharacter->pickUpItem(item);
-                    room->removeItem(item);
-                    if (item->getType() == "KeyCard") {
-                        logEvent("Picked up: "+ item->getName() + " (Escape item)");
-                    } if (item->getType() == "RepairKit") {
-                        logEvent("Picked up: "+ item->getName() + " (Restores HP)");
-                    } if (item->getType() == "OxygenTank") {
-                        logEvent("Picked up: "+ item->getName() +" (Restores O2)");
-                    }
-                }
-
-                // Usar items de emergencia para no morir
-                if (currentCharacter->getHealth() <= 20) {
-                    Inventory<Item*>& inv = currentCharacter->getInventory();
-                    for (auto it = inv.begin(); it != inv.end(); ++it) {
-                        RepairKit* kit = dynamic_cast<RepairKit*>(*it);
-                        if (kit != nullptr) {
-                            kit->use(*currentCharacter);
-                            inv.removeItem(*it);
-                            logEvent("Used Repair Kit to recover HP.");
-                            break;
-                        }
-                    }
-                }
-
-                if (currentCharacter->getOxygen() <= 20) {
-                    Inventory<Item*>& inv = currentCharacter->getInventory();
-                    for (auto it = inv.begin(); it != inv.end(); ++it) {
-                        OxygenTank* tank = dynamic_cast<OxygenTank*>(*it);
-                        if (tank != nullptr) {
-                            tank->use(*currentCharacter);
-                            inv.removeItem(*it);
-                            logEvent("Used Oxygen Tank to recover O2.");
-                            break;
-                        }
-                    }
-                }
-
-                // Verificar la victoria a la hora de conseguir una KeyCard y utilizarla en la habitacion marcada
-                if (room->getId() == escapeRoomId) {
-                    Inventory<Item*>& inv = currentCharacter->getInventory();
-                    for (auto it = inv.begin(); it != inv.end(); ++it) {
-                        KeyCard* key = dynamic_cast<KeyCard*>(*it);
-                        if (key != nullptr) {
-                            logEvent("Character used " + key->getName() + " to escape from " + room->getName() + "!");
-                            escaped = true;
-                            break;
-                        }
-                    }
-                }
-
-                // Movimiento a otra habitacion si no se gano y vuelve a comenzar
-                if (!escaped) {
-                    const auto connections = room->getConnections();
-                    if (!connections.empty()) {
-                        int index = std::rand() % connections.size();
-                        currentCharacter->move(connections[index]);
-                        logEvent("Moved to: " + connections[index]->getName());
-                    }
-                }
-            }
-        }
-
+        placeCharacterIfNeeded();
+        Room* room = currentCharacter->getCurrentRoom();
+        processCombat(room);
+        collectItems(room);
+        useEmergencyItems();
+        if (checkEscape(room)) break;
+        moveToNextRoom(room);
         printTurnStats();
         currentTurns++;
     }
-
-    if (escaped) {
-        logEvent("Character escaped the station successfully!");
-        updateSummary(currentTurns, "Character escaped the station!", true);
-        return;
-    }
-
-    if (!currentCharacter->isAlive()) {
-        logEvent("Character has been defeated.");
-        updateSummary(currentTurns, "Simulation ended: character defeated", false);
-        return;
-    }
-
-    if (currentStation->getRooms().empty()) {
-        logEvent("No rooms in the station.");
-        updateSummary(currentTurns, "Simulation ended: no rooms", false);
-        return;
-    }
-
-    if (currentTurns >= maxTurns) {
-        logEvent("Maximum turns reached.");
-        updateSummary(currentTurns, "Simulation ended: max turns reached", false);
-        return;
-    }
+    if (simulationEnd()) return;
     logEvent("Simulation ended.");
     updateSummary(currentTurns, "Simulation ended", false);
 }
@@ -206,10 +76,125 @@ void SimulationEngine::printTurnStats() {
     if (room != nullptr) {
         roomInfo = room->getName() + " (ID:" + std::to_string(room->getId()) + ")";
     }
-    logEvent("\n=== End of Turn " + std::to_string(currentTurns + 1) + " ===");
+    logEvent("=== End of Turn " + std::to_string(currentTurns + 1) + " ===\n");
     logEvent("Room: " + roomInfo +
              " | HP: " + std::to_string(currentCharacter->getHealth()) +
              " | O2: " + std::to_string(currentCharacter->getOxygen()) +
              " | Inventory: " + std::to_string(currentCharacter->getInventory().getSize()) +
              "/" + std::to_string(currentCharacter->getInventory().getMaxCapacity()));
+}
+
+void SimulationEngine::placeCharacterIfNeeded() {
+    if (currentCharacter != nullptr && currentStation != nullptr) {
+        if (currentCharacter->getCurrentRoom() == nullptr) {
+            const auto rooms = currentStation->getRooms();
+            if (!rooms.empty()) {
+                int start = std::rand() % rooms.size();
+                while (rooms[start]->getId() == escapeRoomId) {
+                    start = std::rand() % rooms.size();
+                }
+                currentCharacter->move(rooms[start]);
+                logEvent("Character moved to room: " + rooms[start]->getName());
+            }
+        }
+    }
+}
+
+    void SimulationEngine::processCombat(Room *room) {
+        if (room != nullptr) {
+            // Amenazas
+            const auto threats = room->getThreats();
+            const int dodgePercent = 30;
+            for (Threat* threat : threats) {
+                if (threat == nullptr) {
+                    continue;
+                }
+                const int roll = std::rand() % 100;
+                if (roll < dodgePercent) {
+                    logEvent("Combat: " + currentCharacter->getName() + " dodged " + threat->getName() + ".");
+                    continue;
+                }
+                if (threat->getType() == "Oxygen Leak") {
+                    threat->activate(*currentCharacter);
+                    logEvent("Combat: " + threat->getName() + " reduced oxygen by " + std::to_string(threat->getDamage()) + ".");
+                }
+                if (threat->getType()== "Defective Robot") {
+                    currentCharacter->takeDamage(threat->getDamage());
+                    logEvent("Combat: " + threat->getName() + " dealt " + std::to_string(threat->getDamage()) + " damage.");
+                }
+            }
+        }
+    }
+
+void SimulationEngine::collectItems(Room *room) {
+    auto roomItems = room->getItems();
+    for (Item* item : roomItems) {
+        if (item == nullptr) continue;
+        if (currentCharacter->getInventory().isFull()) break;
+        currentCharacter->pickUpItem(item);
+        room->removeItem(item);
+        if (item->getType() == "KeyCard") {
+            logEvent("Picked up: "+ item->getName() + " (Escape item)");
+        } if (item->getType() == "RepairKit") {
+            logEvent("Picked up: "+ item->getName() + " (Restores HP)");
+        } if (item->getType() == "OxygenTank") {
+            logEvent("Picked up: "+ item->getName() +" (Restores O2)");
+        }
+    }
+}
+
+void SimulationEngine::useEmergencyItems() {
+    if (currentCharacter->getHealth() <= 20)
+        currentCharacter->tryUseHealthItem();
+    if (currentCharacter->getOxygen() <= 20)
+        currentCharacter->tryUseOxygenItem();
+
+
+}
+
+bool SimulationEngine::checkEscape(Room *room) {
+    if (room->getId() == escapeRoomId) {
+        if (escaped = currentCharacter->tryUseKeyCard(escapeRoomId)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void SimulationEngine::moveToNextRoom(Room *room) {
+    if (!escaped) {
+        const auto connections = room->getConnections();
+        if (!connections.empty()) {
+            int index = std::rand() % connections.size();
+            currentCharacter->move(connections[index]);
+            logEvent("Moved to: " + connections[index]->getName());
+        }
+    }
+}
+
+bool SimulationEngine::simulationEnd() {
+    if (escaped) {
+        logEvent("Character escaped the station successfully!");
+        updateSummary(currentTurns, "Character escaped the station!", true);
+        return true;
+    }
+
+    if (!currentCharacter->isAlive()) {
+        logEvent("Character has been defeated.");
+        updateSummary(currentTurns, "Simulation ended: character defeated", false);
+        return true;
+    }
+
+    if (currentStation->getRooms().empty()) {
+        logEvent("No rooms in the station.");
+        updateSummary(currentTurns, "Simulation ended: no rooms", false);
+        return true;
+    }
+
+    if (currentTurns >= maxTurns) {
+        logEvent("Maximum turns reached.");
+        updateSummary(currentTurns, "Simulation ended: max turns reached", false);
+        return true;
+    }
+    return false;
 }

@@ -7,14 +7,8 @@
 
 DefectiveRobot::DefectiveRobot(int id, const std::string& name, int damage) : Threat(id,name,damage){}
 
-void DefectiveRobot::activate()
-{
-    // Silencioso: SimulationEngine maneja el logging vía logEvent()
-}
-
-void DefectiveRobot::interact()
-{
-    this->activate();
+void DefectiveRobot::activate(Character &character) {
+    character.takeDamage(damage);
 }
 
 std::string DefectiveRobot::getType() const

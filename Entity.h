@@ -13,8 +13,8 @@ public:
     virtual std::string getName() const { return name; };
     int getId() const { return id;};
     virtual ~Entity() = default;
-    friend std::ostream& operator<<(std::ostream& os, const Entity& entity)
-    {
+    virtual std::string getType() const = 0;
+    friend std::ostream& operator<<(std::ostream& os, const Entity& entity) {
         os << "Entity: " << entity.getId() << " - : " << entity.getName();
         return os;
     }

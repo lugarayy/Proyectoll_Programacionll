@@ -5,14 +5,13 @@
 #ifndef PROYECTOLL_PROGRAMACIONLL_OXYGENLEAK_H
 #define PROYECTOLL_PROGRAMACIONLL_OXYGENLEAK_H
 #include "Threat.h"
+#include <string>
 
 class OxygenLeak : public Threat {
 public:
     OxygenLeak(int id, const std::string& name, int damage);
     ~OxygenLeak() = default;
-
-    void interact() override;
-    void activate() override;
+    void activate(Character &character) override;
     std::string getType() const override;
 };
 

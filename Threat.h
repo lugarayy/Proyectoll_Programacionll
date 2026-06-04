@@ -11,9 +11,9 @@ class Character;
 class Threat : public Entity {
 public:
     Threat(int id, const std::string& name, int damage) : Entity(id,name), damage(damage) {}
-    virtual ~Threat() = default;
-    virtual void activate() = 0;
-    virtual std::string getType() const = 0;
+    ~Threat() override=default;
+    virtual void activate(Character &character) = 0;
+    std::string getType() const override {return "Threat";}
     int getDamage() const { return damage; }
 protected:
    int damage;

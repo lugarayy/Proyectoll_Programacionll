@@ -4,17 +4,15 @@
 
 #include "OxygenLeak.h"
 
+#include "Character.h"
+
 OxygenLeak::OxygenLeak(int id, const std::string& name, int damage) : Threat(id, name, damage) {}
 
-void OxygenLeak::interact()
-{
-    // Silencioso: SimulationEngine maneja el logging vía logEvent()
-    this->activate();
-}
 
-void OxygenLeak::activate()
+
+void OxygenLeak::activate(Character &character)
 {
-    // Silencioso: SimulationEngine maneja el logging vía logEvent()
+    character.reduceOxygen(damage);
 }
 
 std::string OxygenLeak::getType() const

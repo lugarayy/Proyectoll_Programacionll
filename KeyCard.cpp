@@ -9,11 +9,21 @@ KeyCard::KeyCard(int id, const string& name, const string& accessLevel) : Item(i
 {
 }
 
-void KeyCard::use(Character &character) {}
-// No hay ningun uso pa esto jujeji, la victoria se decide por tenerla en el inventario y llegar a la habitacion que la necesita
+void KeyCard::use(Character &character) {
+   Room* currentRoom = character.getCurrentRoom();
+   if (currentRoom == nullptr) {
+      return;
+   }
 
-string KeyCard::getType() const
-{
+   const bool isAtEscapeRoom = currentRoom->getId() == 4;
+   const bool hasRequiredAccess = accessLevel == "A";
+
+   if (isAtEscapeRoom && hasRequiredAccess) {
+      character.grantEscapeAccess();
+   }
+}
+
+string KeyCard::getType() const {
    return "KeyCard";
 }
 

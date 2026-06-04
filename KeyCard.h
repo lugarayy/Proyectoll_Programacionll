@@ -4,18 +4,20 @@
 
 #ifndef PROYECTOLL_PROGRAMACIONLL_KEYCARD_H
 #define PROYECTOLL_PROGRAMACIONLL_KEYCARD_H
-
+#include <string>
 #include "Item.h"
+#include "Room.h"
 
 class KeyCard : public Item
 {
 private:
-    string accessLevel;
+    std::string accessLevel;
 public:
-    KeyCard(int id, const string& name, const string& accessLevel);
+    KeyCard(int id, const std::string& name, const std::string& accessLevel);
     void use(Character& character) override;
-    string getType() const override;
-    string getAccessLevel() const;
+    std::string getType() const override;
+    std::string getAccessLevel() const;
+
 };
 
 

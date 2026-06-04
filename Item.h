@@ -16,10 +16,11 @@ class Item : public Entity
 {
 public:
     Item(int id, const string &name) : Entity(id, name) {}
-    virtual ~Item() = default;
+    ~Item()override=default;
 
     virtual void use(Character& character) = 0;
-    virtual string getType() const = 0;
+
+    string getType() const override { return "Item"; }
 
     Item(const Item &item) = delete;
     Item& operator=(const Item &item) = delete;
@@ -29,6 +30,7 @@ public:
         os << "Item: " << item.id << " - " << item.name;
         return os;
     }
+
 };
 
 
