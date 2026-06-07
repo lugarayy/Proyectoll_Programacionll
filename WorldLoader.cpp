@@ -8,9 +8,9 @@
 #include "RepairKit.h"
 #include "DefectiveRobot.h"
 #include "OxygenLeak.h"
+#include "KeyCard.h"
 #include <fstream>
 #include <stdexcept>
-// para rand()
 
 void WorldLoader::loadRooms(const string& file, Station* station)
 {
@@ -45,8 +45,6 @@ void WorldLoader::loadRooms(const string& file, Station* station)
        station->addRoom(room);
    }
     fileroom.close();
-
-    // Las conexiones se generan automaticamente en randomizeConnections()
 }
 
 void WorldLoader::loadItems(const string& file, Station* station)
@@ -176,17 +174,12 @@ Station* WorldLoader::loadStation(const string& rooms, const string& items, cons
 {
     Station* station = new Station("Space station");
     loadRooms(rooms,station);
-    // NUEVO -> despues de cargar los cuartos del archivo, mezclamos las conexiones
-    // para que cada ejecucion del programa tenga un mapa diferente.
     randomizeConnections(station);
     loadItems(items,station);
     loadThreats(threats,station);
     return station;
 }
 
-// =====================================================================
-// randomizeConnections
-// ---------------------------------------------------------------------
 // Lo que hace este metodo:
 //   - Sobrescribe las conexiones de los cuartos cargadas del archivo rooms.txt
 //   - Genera un grafo COMPLETAMENTE aleatorio entre los cuartos
@@ -215,18 +208,11 @@ void WorldLoader::randomizeConnections(Station* station)
 {
     vector<Room*> rooms = station->getRooms();
     int n = static_cast<int>(rooms.size());
-
-    // Si hay menos de 2 cuartos, no hay conexiones que hacer
     if (n < 2) return;
-
-    // Paso 1: limpiar las conexiones cargadas del archivo
     for (Room* room : rooms) {
         room->clearConnections();
     }
-
-    // Paso 2: copiar y mezclar el vector de cuartos (Fisher-Yates shuffle)
-    // Esto sirve para que el orden en que se construye el spanning tree
-    // sea diferente cada vez.
+    //(Fisher-Yates shuffle)
     vector<Room*> shuffled = rooms;
     for (int i = n - 1; i > 0; i--) {
         int j = rand() % (i + 1);
@@ -235,24 +221,16 @@ void WorldLoader::randomizeConnections(Station* station)
         shuffled[j] = temp;
     }
 
-    // Paso 3: construir spanning tree aleatorio
-    // Para cada cuarto (desde el indice 1) lo conectamos a un cuarto random
-    // que este ANTES en el array. Esto garantiza un arbol conexo sin ciclos.
     for (int i = 1; i < n; i++) {
         int parent = rand() % i;
         shuffled[i]->addConnection(shuffled[parent]);
-        shuffled[parent]->addConnection(shuffled[i]); // bidireccional
+        shuffled[parent]->addConnection(shuffled[i]);
     }
-
-    // Paso 4: agregar aristas extra random para variar el mapa
-    // (asi no es solo un arbol lineal, sino que hay caminos alternativos)
     int extraEdges = n / 2;
     for (int e = 0; e < extraEdges; e++) {
         int a = rand() % n;
         int b = rand() % n;
-        if (a == b) continue; // un cuarto no se conecta a si mismo
-
-        // Verificar si la conexion ya existe (para no duplicar)
+        if (a == b) continue;
         bool exists = false;
         for (Room* conn : shuffled[a]->getConnections()) {
             if (conn == shuffled[b]) {

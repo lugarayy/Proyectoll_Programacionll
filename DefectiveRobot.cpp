@@ -1,7 +1,6 @@
 //
 // Created by Jose on 30/5/2026.
 //
-//damage 15
 
 #include "DefectiveRobot.h"
 

@@ -23,12 +23,8 @@ public:
     std::vector<Room*> getRooms() const;
     std::string getName() const;
     void printMap() const;
-    //iterador q recorre las salas del juego
-    //el iterador ya viene incluido en vector :O
     std::vector<Room*>::iterator begin();
     std::vector<Room*>::iterator end();
-
-    //en vez de usar tostring usamos operadores
     friend std::ostream& operator<<(std::ostream& os, const Station& station);
 
 };

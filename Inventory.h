@@ -58,11 +58,8 @@ public:
         }
         return nullptr;
     }
-
-    //se usa typename por que es un template
     typename std::vector<T>::iterator begin() { return items.begin(); }
     typename std::vector<T>::iterator end() { return items.end(); }
-
     friend std::ostream& operator<<(std::ostream& os, const Inventory<T>& inventory)
     {
         os << "Inventory: " << inventory.items.size() << " - " << inventory.maxCapacity;

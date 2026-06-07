@@ -4,7 +4,6 @@
 
 #ifndef PROYECTOLL_PROGRAMACIONLL_LOGGER_H
 #define PROYECTOLL_PROGRAMACIONLL_LOGGER_H
-//#include "ReportGenerator.h"
 #include <string>
 #include <fstream>
 

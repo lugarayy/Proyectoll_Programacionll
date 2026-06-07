@@ -17,8 +17,8 @@ void ReportGenerator::generateReport(const SimulationSummary& summary, const std
     const std::time_t now = std::time(nullptr);
 
     out << "----------------------------------------" << std::endl;
-    out << "           FINAL REPORT" << std::endl;
-    out << "------------------uwu-------------------" << std::endl;
+    out << "              FINAL REPORT" << std::endl;
+    out << "-------------------_--------------------" << std::endl;
     out << "\nGenerated at: " << std::asctime(std::localtime(&now));
     out << "Turns taken: " << summary.turnsTaken << std::endl;
     out << "Result: " << (summary.success ? "Success" : "Failure") << std::endl;
