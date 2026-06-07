@@ -22,19 +22,6 @@ Each run generates a **different map** using a randomized spanning tree algorith
 ## Compilation
 
 Requires **CMake 3.x** and a **C++20** compatible compiler (GCC or MinGW).
-
-```bash
-# Clone the repository
-git clone https://github.com/lugarayy/Proyectoll_Programacionll.git
-cd Proyectoll_Programacionll
-
-# Build with CMake
-mkdir cmake-build-debug
-cd cmake-build-debug
-cmake ..
-cmake --build .
-```
-
 Or open the project in **CLion** and use the default Debug build configuration.
 
 ---
