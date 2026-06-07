@@ -8,28 +8,28 @@
 #include <iostream>
 #include <vector>
 #include "Room.h"
-using namespace std;
+
 
 class Station
 {
 private:
-    string name;
-    vector<Room*> rooms;
+    std::string name;
+    std::vector<Room*> rooms;
 public:
-    Station(const string& name);
+    Station(const std::string& name);
     ~Station();
     void addRoom(Room* room);
     Room* getRoomById(int id) const;
-    vector<Room*> getRooms() const;
-    string getName() const;
+    std::vector<Room*> getRooms() const;
+    std::string getName() const;
     void printMap() const;
     //iterador q recorre las salas del juego
     //el iterador ya viene incluido en vector :O
-    vector<Room*>::iterator begin();
-    vector<Room*>::iterator end();
+    std::vector<Room*>::iterator begin();
+    std::vector<Room*>::iterator end();
 
     //en vez de usar tostring usamos operadores
-    friend ostream& operator<<(ostream& os, const Station& station);
+    friend std::ostream& operator<<(std::ostream& os, const Station& station);
 
 };
 

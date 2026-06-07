@@ -16,7 +16,7 @@ public:
     void use(Character& character) override;
     std::string getType() const override;
     int getRestore() const;
-    string getDescription() const override;
+    std::string getDescription() const override;
 };
 
 

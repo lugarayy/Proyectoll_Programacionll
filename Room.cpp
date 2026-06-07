@@ -5,6 +5,7 @@
 #include "Room.h"
 #include "Item.h"
 #include "Threat.h"
+using namespace std;
 
 Room::Room(int id, const string& name)
 : id(id), name(name) {}

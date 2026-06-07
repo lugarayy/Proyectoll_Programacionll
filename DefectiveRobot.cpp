@@ -15,3 +15,6 @@ std::string DefectiveRobot::getType() const
 {
     return "Defective Robot";
 }
+std::string DefectiveRobot::getEffectLog() const {
+    return "dealt " + std::to_string(damage) +" damage.";
+}

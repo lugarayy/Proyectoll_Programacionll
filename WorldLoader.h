@@ -7,14 +7,8 @@
 
 #include "Station.h"
 #include "OxygenTank.h"
-#include "RepairKit.h"
 #include "KeyCard.h"
-#include "DefectiveRobot.h"
-#include "OxygenLeak.h"
 #include <iostream>
-#include <fstream>
-#include <stdexcept>
-#include <sstream>
 using namespace std;
 
 // usando factory method

@@ -4,7 +4,6 @@
 
 #ifndef PROYECTOLL_PROGRAMACIONLL_SIMULATIONENGINE_H
 #define PROYECTOLL_PROGRAMACIONLL_SIMULATIONENGINE_H
-#include "Logger.h"
 #include "Station.h"
 #include "Character.h"
 

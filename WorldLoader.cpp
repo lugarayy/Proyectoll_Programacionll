@@ -4,7 +4,13 @@
 
 #include "WorldLoader.h"
 #include <sstream>
-#include <cstdlib>  // para rand()
+#include <cstdlib>
+#include "RepairKit.h"
+#include "DefectiveRobot.h"
+#include "OxygenLeak.h"
+#include <fstream>
+#include <stdexcept>
+// para rand()
 
 void WorldLoader::loadRooms(const string& file, Station* station)
 {

@@ -7,6 +7,7 @@
 #include "Threat.h"
 #include <ctime>
 #include <string>
+#include "Logger.h"
 
 SimulationEngine::SimulationEngine(Station* station, Character* character, int maxTurns, int escapeRoomId)
     : currentCharacter(character), currentStation(station), currentTurns(0), maxTurns(maxTurns),
@@ -99,30 +100,21 @@ void SimulationEngine::placeCharacterIfNeeded() {
 }
 
     void SimulationEngine::processCombat(Room *room) {
-        if (room != nullptr) {
-            // Amenazas
-            const auto threats = room->getThreats();
-            const int dodgePercent = 30;
-            for (Threat* threat : threats) {
-                if (threat == nullptr) {
-                    continue;
-                }
-                const int roll = std::rand() % 100;
-                if (roll < dodgePercent) {
-                    logEvent("Combat: " + currentCharacter->getName() + " dodged " + threat->getName() + ".");
-                    continue;
-                }
-                if (threat->getType() == "Oxygen Leak") {
-                    threat->activate(*currentCharacter);
-                    logEvent("Combat: " + threat->getName() + " reduced oxygen by " + std::to_string(threat->getDamage()) + ".");
-                }
-                if (threat->getType()== "Defective Robot") {
-                   threat->activate(*currentCharacter);
-                    logEvent("Combat: " + threat->getName() + " dealt " + std::to_string(threat->getDamage()) + " damage.");
-                }
+    if (room != nullptr) {
+        const auto threats = room->getThreats();
+        const int dodgePercent = 30;
+        for (Threat* threat : threats) {
+            if (threat == nullptr) continue;
+            const int roll = std::rand() % 100;
+            if (roll < dodgePercent) {
+                logEvent("Combat: " + currentCharacter->getName() + " dodged " + threat->getName() + ".");
+                continue;
             }
+            threat->activate(*currentCharacter);
+            logEvent("Combat: " + threat->getName() + " " + threat->getEffectLog());
         }
     }
+}
 
 void SimulationEngine::collectItems(Room *room) {
     auto roomItems = room->getItems();
@@ -146,9 +138,8 @@ void SimulationEngine::useEmergencyItems() {
 
 bool SimulationEngine::checkEscape(Room *room) {
     if (room->getId() == escapeRoomId) {
-        if (escaped = currentCharacter->tryUseKeyCard(escapeRoomId)) {
-            return true;
-        }
+        escaped = currentCharacter->tryUseKeyCard(escapeRoomId);
+        if (escaped) return true;
     }
     return false;
 }
@@ -165,12 +156,6 @@ void SimulationEngine::moveToNextRoom(Room *room) {
 }
 
 bool SimulationEngine::simulationEnd() {
-    if (escaped) {
-        logEvent("Character escaped the station successfully!");
-        updateSummary(currentTurns, "Character escaped the station!", true);
-        return true;
-    }
-
     if (!currentCharacter->isAlive()) {
         if (currentCharacter->getOxygen() <= 0) {
             logEvent("Character died due to lack of oxygen.");
@@ -181,7 +166,6 @@ bool SimulationEngine::simulationEnd() {
         }
         return true;
     }
-
     if (currentStation->getRooms().empty()) {
         logEvent("No rooms in the station.");
         updateSummary(currentTurns, "Simulation ended: no rooms", false);

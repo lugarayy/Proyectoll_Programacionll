@@ -11,8 +11,8 @@ Character::Character() : Entity(0,"Player"), health(100), oxygen(100), escapeAcc
 Character::Character(std::string name, int health, int oxygen, size_t inventoryCapacity)
     : Entity(0,std::move(name)), health(health), oxygen(oxygen), escapeAccessGranted(false), inventory(inventoryCapacity), currentRoom(nullptr) {}
 
-string Character::getType() const {
-    return name;
+std::string Character::getType() const {
+    return "Character";
 }
 
 void Character::setName(const std::string& name) {
@@ -111,12 +111,13 @@ bool Character::tryUseOxygenItem() {
 }
 
 bool Character::tryUseKeyCard(int escapeRoomId) {
+    if (currentRoom==nullptr || currentRoom->getId() != escapeRoomId) return false;
     for (size_t i = 0; i < inventory.getSize(); ++i) {
         Item* item = inventory.getItems()[i];
         if (item != nullptr && item->getType() == "KeyCard") {
             item->use(*this);
             inventory.removeItem(item);
-            return true;
+            return canEscape();
         }
     }
     return false;

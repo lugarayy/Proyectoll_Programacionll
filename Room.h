@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-using namespace std;
+
 
 class Item;
 class Threat;
@@ -16,34 +16,31 @@ class Room
 {
 private:
     int id;
-    string name;
-    int oxygen;
-    int energy;
-
-    vector<Room*> connections;
-    vector<Item*> items;
-    vector<Threat*> threats;
+    std::string name;
+    std::vector<Room*> connections;
+    std::vector<Item*> items;
+    std::vector<Threat*> threats;
 public:
-    Room(int id, const string& name);
+    Room(int id, const std::string& name);
     ~Room();
 
     int getId() const;
-    string getName() const;
+    std::string getName() const;
 
     void addConnection(Room* room);
-    vector<Room*> getConnections() const;
+    std::vector<Room*> getConnections() const;
     void clearConnections();
 
     void addItem(Item* item);
     void addThreat(Threat* threat);
 
-    vector<Item*> getItems() const;
-    vector<Threat*> getThreats() const;
+    std::vector<Item*> getItems() const;
+    std::vector<Threat*> getThreats() const;
 
     void removeItem(Item* item);
 
     bool operator==(const Room& room) const;
-    friend ostream& operator<<(ostream& os, const Room& room); //en vez de tostring, muestra los datos con operador
+    friend std::ostream& operator<<(std::ostream& os, const Room& room); //en vez de tostring, muestra los datos con operador
 
     void clearItems();
 };

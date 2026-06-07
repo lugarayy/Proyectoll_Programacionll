@@ -5,14 +5,14 @@
 #include "RepairKit.h"
 #include "Character.h"
 
-RepairKit::RepairKit(int id, const string& name, int restore) : Item(id, name), restore(restore) {}
+RepairKit::RepairKit(int id, const std::string& name, int restore) : Item(id, name), restore(restore) {}
 
 void RepairKit::use(Character& character)
 {
     character.restoreHealth(restore);
 }
 
-string RepairKit::getType() const
+std::string RepairKit::getType() const
 {
     return "Repair Kit";
 }
@@ -22,6 +22,6 @@ int RepairKit::getRestore() const
     return restore;
 }
 
-string RepairKit::getDescription() const {
+std::string RepairKit::getDescription() const {
     return " (Restores " + std::to_string(restore) + " health)";
 }

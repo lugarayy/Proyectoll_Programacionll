@@ -15,6 +15,7 @@ public:
     virtual void activate(Character &character) = 0;
     std::string getType() const override {return "Threat";}
     int getDamage() const { return damage; }
+    virtual std::string getEffectLog() const=0;
 protected:
    int damage;
 };

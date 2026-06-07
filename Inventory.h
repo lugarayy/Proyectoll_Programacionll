@@ -8,14 +8,14 @@
 #include <vector>
 #include <stdexcept>
 #include <iostream>
-using namespace std;
+
 
 template <typename T>
 
 class Inventory
 {
 private:
-    vector<T> items;
+    std::vector<T> items;
     size_t maxCapacity;
 public:
     Inventory(size_t capacity) : maxCapacity(capacity) {}
@@ -25,13 +25,13 @@ public:
     bool isEmpty() const { return items.empty(); }
     size_t getSize() const { return items.size(); }
     size_t getMaxCapacity() const { return maxCapacity; }
-    const vector<T>& getItems() const { return items; }
+    const std::vector<T>& getItems() const { return items; }
 
     void addItem(T item)
     {
         if (isFull())
         {
-            throw runtime_error("Inventory already full");
+            throw std::runtime_error("Inventory already full");
         }
         items.push_back(item);
     }
@@ -46,7 +46,7 @@ public:
                 return;
             }
         }
-        throw runtime_error("Item not found");
+        throw std::runtime_error("Item not found");
     }
 
     T findbyId(int id) const
@@ -60,10 +60,10 @@ public:
     }
 
     //se usa typename por que es un template
-    typename vector<T>::iterator begin() { return items.begin(); }
-    typename vector<T>::iterator end() { return items.end(); }
+    typename std::vector<T>::iterator begin() { return items.begin(); }
+    typename std::vector<T>::iterator end() { return items.end(); }
 
-    friend ostream& operator<<(ostream& os, const Inventory<T>& inventory)
+    friend std::ostream& operator<<(std::ostream& os, const Inventory<T>& inventory)
     {
         os << "Inventory: " << inventory.items.size() << " - " << inventory.maxCapacity;
         return os;

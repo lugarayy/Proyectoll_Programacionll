@@ -3,7 +3,6 @@
 //
 
 #include "OxygenLeak.h"
-
 #include "Character.h"
 
 OxygenLeak::OxygenLeak(int id, const std::string& name, int damage) : Threat(id, name, damage) {}
@@ -18,5 +17,8 @@ void OxygenLeak::activate(Character &character)
 std::string OxygenLeak::getType() const
 {
     return "Oxygen Leak";
+}
+std::string OxygenLeak::getEffectLog() const {
+    return "reduced oxygen by " + std::to_string(damage) +".";
 }
 

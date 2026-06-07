@@ -6,7 +6,6 @@
 #define PROYECTOLL_PROGRAMACIONLL_KEYCARD_H
 #include <string>
 #include "Item.h"
-#include "Room.h"
 
 class KeyCard : public Item
 {

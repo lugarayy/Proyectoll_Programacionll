@@ -4,30 +4,23 @@
 
 #include "KeyCard.h"
 #include "Character.h"
+#include "Room.h"
 
-KeyCard::KeyCard(int id, const string& name, const string& accessLevel) : Item(id, name), accessLevel(accessLevel)
+KeyCard::KeyCard(int id, const std::string& name, const std::string& accessLevel) : Item(id, name), accessLevel(accessLevel)
 {
 }
 
 void KeyCard::use(Character &character) {
-   Room* currentRoom = character.getCurrentRoom();
-   if (currentRoom == nullptr) {
-      return;
-   }
-
-   const bool isAtEscapeRoom = currentRoom->getId() == 4;
-   const bool hasRequiredAccess = accessLevel == "A";
-
-   if (isAtEscapeRoom && hasRequiredAccess) {
+   if (accessLevel=="A") {
       character.grantEscapeAccess();
    }
 }
 
-string KeyCard::getType() const {
+std::string KeyCard::getType() const {
    return "KeyCard";
 }
 
-string KeyCard::getAccessLevel() const
+std::string KeyCard::getAccessLevel() const
 {
    return accessLevel;
 }

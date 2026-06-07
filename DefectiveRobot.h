@@ -13,7 +13,7 @@ public:
     ~DefectiveRobot() = default;
     void activate(Character& character) override;
     std::string getType() const override;
-
+    std::string getEffectLog() const override;
 };
 
 

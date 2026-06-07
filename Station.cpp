@@ -3,6 +3,7 @@
 //
 
 #include "Station.h"
+using namespace std;
 
 Station::Station(const string& name) : name(name) {}
 
