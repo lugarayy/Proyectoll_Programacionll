@@ -30,8 +30,8 @@ class Character : public Entity {
     int getHealth() const;
     int getOxygen() const;
     ~Character() override;
-    bool tryUseHealthItem();
-    bool tryUseOxygenItem();
+    std::string tryUseHealthItem();
+    std::string tryUseOxygenItem();
     bool tryUseKeyCard(int escapeRoomId);
 
 private:

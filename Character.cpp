@@ -86,28 +86,29 @@ int Character::getOxygen() const {
     return oxygen;
 }
 
-bool Character::tryUseHealthItem() {
+std::string Character::tryUseHealthItem() {
     for (size_t i = 0; i < inventory.getSize(); ++i) {
         Item* item = inventory.getItems()[i];
         if (item != nullptr&& item->getType() == "Repair Kit") {
+            std::string usedName = item->getName();
             item->use(*this);
             inventory.removeItem(item);
-            return true;
+            return usedName;
         }
     }
-    return false;
+    return "";
 }
 
-bool Character::tryUseOxygenItem() {
+std::string Character::tryUseOxygenItem() {
     for (size_t i = 0; i < inventory.getSize(); ++i) {
         Item* item = inventory.getItems()[i];
         if (item != nullptr && item->getType() == "Oxygen Tank") {
+            std::string usedName = item->getName();
             item->use(*this);
             inventory.removeItem(item);
-            return true;
         }
     }
-    return false;
+    return "";
 }
 
 bool Character::tryUseKeyCard(int escapeRoomId) {

@@ -1,9 +1,9 @@
 ----------------------------------------
-           FINAL REPORT
-------------------uwu-------------------
+              FINAL REPORT
+-------------------_--------------------
 
-Generated at: Sat Jun 06 23:09:22 2026
-Turns taken: 12
+Generated at: Sat Jun 06 23:49:11 2026
+Turns taken: 13
 Result: Failure
 Final state: Character died due to health reaching zero.
 
@@ -11,85 +11,91 @@ Final state: Character died due to health reaching zero.
           SIMULATION LOG
 ========================================
   Turn 1 begins.
-  Character moved to room: Storage Bay
-  Combat: Coolant Leak reduced oxygen by 10.
-  Picked up: Reserve Tank (Restores 25 oxygen)
-  Moved to: Control Room
+  Character moved to room: Reactor Core
+  Combat: Reactor Guardian dealt 28 damage.
+  Picked up: Emergency Kit (Restores 30 health)
+  Moved to: Cargo Hold
   === End of Turn 1 ===
 
-  Room: Control Room (ID:1) | HP: 100 | O2: 90 | Inventory: 1/10
+  Room: Cargo Hold (ID:5) | HP: 72 | O2: 100 | Inventory: 1/10
   Turn 2 begins.
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Player dodged Ventilation Failure.
-  Picked up: Field Kit (Restores 15 health)
-  Moved to: Medical Bay
+  Combat: Hull Breach reduced oxygen by 12.
+  Picked up: Security Card (Escape Item)
+  Picked up: Spare Tank (Restores 15 oxygen)
+  Moved to: Engine Bay
   === End of Turn 2 ===
 
-  Room: Medical Bay (ID:3) | HP: 85 | O2: 90 | Inventory: 2/10
+  Room: Engine Bay (ID:2) | HP: 72 | O2: 103 | Inventory: 2/10
   Turn 3 begins.
-  Combat: Rogue Drone dealt 20 damage.
-  Picked up: Basic Kit (Restores 15 health)
-  Moved to: Control Room
-  === End of Turn 3 ===
-
-  Room: Control Room (ID:1) | HP: 65 | O2: 90 | Inventory: 3/10
-  Turn 4 begins.
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Player dodged Ventilation Failure.
-  Moved to: Reactor Core
-  === End of Turn 4 ===
-
-  Room: Reactor Core (ID:10) | HP: 50 | O2: 90 | Inventory: 3/10
-  Turn 5 begins.
-  Combat: Player dodged Reactor Guardian.
-  Picked up: Emergency Kit (Restores 30 health)
-  Moved to: Control Room
-  === End of Turn 5 ===
-
-  Room: Control Room (ID:1) | HP: 50 | O2: 90 | Inventory: 4/10
-  Turn 6 begins.
-  Combat: Broken Sentinel dealt 15 damage.
-  Combat: Player dodged Ventilation Failure.
-  Moved to: Engine Bay
-  === End of Turn 6 ===
-
-  Room: Engine Bay (ID:2) | HP: 35 | O2: 90 | Inventory: 4/10
-  Turn 7 begins.
   Combat: Player dodged Cracked Pipe.
   Picked up: Small Tank (Restores 20 oxygen)
-  Moved to: Escape Pod
+  Moved to: Communications
+  === End of Turn 3 ===
+
+  Room: Communications (ID:8) | HP: 72 | O2: 123 | Inventory: 2/10
+  Turn 4 begins.
+  Combat: Security Bot dealt 22 damage.
+  Picked up: Large Tank (Restores 30 oxygen)
+  Moved to: Laboratory
+  === End of Turn 4 ===
+
+  Room: Laboratory (ID:6) | HP: 50 | O2: 153 | Inventory: 2/10
+  Turn 5 begins.
+  Combat: Malfunctioning Arm dealt 18 damage.
+  Combat: Gas Leak reduced oxygen by 9.
+  Picked up: Advanced Kit (Restores 25 health)
+  Moved to: Hydroponics
+  === End of Turn 5 ===
+
+  Room: Hydroponics (ID:7) | HP: 32 | O2: 144 | Inventory: 3/10
+  Turn 6 begins.
+  Combat: Toxic Spill reduced oxygen by 14.
+  Picked up: Medic Kit (Restores 20 health)
+  Picked up: Patch Kit (Restores 10 health)
+  Moved to: Laboratory
+  === End of Turn 6 ===
+
+  Room: Laboratory (ID:6) | HP: 32 | O2: 130 | Inventory: 5/10
+  Turn 7 begins.
+  Combat: Malfunctioning Arm dealt 18 damage.
+  Combat: Gas Leak reduced oxygen by 9.
+  Used Emergency Kit to restore health.
+  Moved to: Communications
   === End of Turn 7 ===
 
-  Room: Escape Pod (ID:4) | HP: 35 | O2: 90 | Inventory: 5/10
+  Room: Communications (ID:8) | HP: 44 | O2: 121 | Inventory: 4/10
   Turn 8 begins.
-  Combat: Player dodged Haywire Turret.
-  Picked up: Compact Tank (Restores 20 oxygen)
-  Moved to: Laboratory
+  Combat: Security Bot dealt 22 damage.
+  Moved to: Engine Bay
   === End of Turn 8 ===
 
-  Room: Laboratory (ID:6) | HP: 35 | O2: 90 | Inventory: 6/10
+  Room: Engine Bay (ID:2) | HP: 22 | O2: 121 | Inventory: 4/10
   Turn 9 begins.
-  Combat: Malfunctioning Arm dealt 18 damage.
-  Combat: Player dodged Gas Leak.
-  Picked up: Advanced Kit (Restores 25 health)
-  Moved to: Escape Pod
+  Combat: Cracked Pipe reduced oxygen by 10.
+  Moved to: Cargo Hold
   === End of Turn 9 ===
 
-  Room: Escape Pod (ID:4) | HP: 32 | O2: 90 | Inventory: 6/10
+  Room: Cargo Hold (ID:5) | HP: 22 | O2: 111 | Inventory: 4/10
   Turn 10 begins.
-  Combat: Haywire Turret dealt 25 damage.
+  Combat: Hull Breach reduced oxygen by 12.
   Moved to: Engine Bay
   === End of Turn 10 ===
 
-  Room: Engine Bay (ID:2) | HP: 22 | O2: 90 | Inventory: 5/10
+  Room: Engine Bay (ID:2) | HP: 22 | O2: 99 | Inventory: 4/10
   Turn 11 begins.
   Combat: Cracked Pipe reduced oxygen by 10.
-  Moved to: Escape Pod
+  Moved to: Cargo Hold
   === End of Turn 11 ===
 
-  Room: Escape Pod (ID:4) | HP: 22 | O2: 80 | Inventory: 5/10
+  Room: Cargo Hold (ID:5) | HP: 22 | O2: 89 | Inventory: 4/10
   Turn 12 begins.
-  Combat: Haywire Turret dealt 25 damage.
+  Combat: Hull Breach reduced oxygen by 12.
+  Moved to: Reactor Core
+  === End of Turn 12 ===
+
+  Room: Reactor Core (ID:10) | HP: 22 | O2: 77 | Inventory: 4/10
+  Turn 13 begins.
+  Combat: Reactor Guardian dealt 28 damage.
   Character died due to health reaching zero.
   Simulation ended.
 ========================================

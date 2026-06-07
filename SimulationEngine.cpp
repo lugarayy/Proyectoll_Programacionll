@@ -39,6 +39,13 @@ void SimulationEngine::run() {
         currentTurns++;
 
     }
+    if (escaped) {
+        logEvent("Character escaped the station successfully!");
+        updateSummary(currentTurns + 1, "Character escaped the station!", true);
+    } else if (currentTurns >= maxTurns) {
+        logEvent("Maximum turns reached.");
+        updateSummary(currentTurns, "Simulation ended: max turns reached", false);
+    }
 }
 
 bool SimulationEngine::isSimulationOver() const {
@@ -128,11 +135,17 @@ void SimulationEngine::collectItems(Room *room) {
 }
 
 void SimulationEngine::useEmergencyItems() {
-    if (currentCharacter->getHealth() <= 20)
-        currentCharacter->tryUseHealthItem();
-    if (currentCharacter->getOxygen() <= 20)
-        currentCharacter->tryUseOxygenItem();
-
+    if (currentCharacter->getHealth() <= 20){
+        std::string used = currentCharacter->tryUseHealthItem();
+        if (!used.empty()) {
+            logEvent("Used "+ used + " to restore health.");
+        }
+}
+    if (currentCharacter->getOxygen() <= 20){}
+    std::string used = currentCharacter->tryUseOxygenItem();
+    if (!used.empty()) {
+        logEvent("Used "+ used + " to restore 02.");
+}
 
 }
 
@@ -156,6 +169,11 @@ void SimulationEngine::moveToNextRoom(Room *room) {
 }
 
 bool SimulationEngine::simulationEnd() {
+    if (escaped) {
+        logEvent("Character escaped the station successfully!");
+        updateSummary(currentTurns, "Character escaped the station!", true);
+        return true;
+    }
     if (!currentCharacter->isAlive()) {
         if (currentCharacter->getOxygen() <= 0) {
             logEvent("Character died due to lack of oxygen.");
