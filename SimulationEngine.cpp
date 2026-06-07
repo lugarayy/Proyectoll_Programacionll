@@ -141,11 +141,12 @@ void SimulationEngine::useEmergencyItems() {
             logEvent("Used "+ used + " to restore health.");
         }
 }
-    if (currentCharacter->getOxygen() <= 20){}
-    std::string used = currentCharacter->tryUseOxygenItem();
-    if (!used.empty()) {
-        logEvent("Used "+ used + " to restore 02.");
-}
+    if (currentCharacter->getOxygen() <= 20) {
+        std::string used = currentCharacter->tryUseOxygenItem();
+        if (!used.empty()) {
+            logEvent("Used "+ used + " to restore 02.");
+        }
+    }
 
 }
 

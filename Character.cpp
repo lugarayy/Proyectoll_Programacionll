@@ -106,6 +106,7 @@ std::string Character::tryUseOxygenItem() {
             std::string usedName = item->getName();
             item->use(*this);
             inventory.removeItem(item);
+            return usedName;
         }
     }
     return "";
