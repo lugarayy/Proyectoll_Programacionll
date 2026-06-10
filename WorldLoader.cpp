@@ -180,29 +180,32 @@ Station* WorldLoader::loadStation(const string& rooms, const string& items, cons
     return station;
 }
 
-// Lo que hace este metodo:
-//   - Sobrescribe las conexiones de los cuartos cargadas del archivo rooms.txt
-//   - Genera un grafo COMPLETAMENTE aleatorio entre los cuartos
-//   - Pero garantiza que TODOS los cuartos sean alcanzables desde cualquiera
-//     (sin esto, el cuarto 10 con la KeyCard o el cuarto 4 con la salida
-//      podrian quedar aislados y la simulacion fallaria siempre)
+// =====================================================================
+// randomizeConnections
+// ---------------------------------------------------------------------
+// What this method does:
+//   - Overwrites the room connections loaded from the rooms.txt file.
+//   - Generates a COMPLETELY random graph between the rooms.
+//   - However, it guarantees that ALL rooms are reachable from any other
+//     (without this, room 10 with the KeyCard or room 4 with the exit
+//      could end up isolated, and the simulation would always fail).
 //
-// Como lo hace (algoritmo):
-//   1) Borra todas las conexiones existentes de cada cuarto
-//   2) Mezcla aleatoriamente el orden de los cuartos (shuffle Fisher-Yates)
-//   3) Construye un "spanning tree aleatorio":
-//        cada cuarto (desde el 2do) se conecta a UN cuarto random anterior.
-//        Esto garantiza que el grafo es conexo (todos alcanzables).
-//   4) Agrega aristas extras random (n/2) para que el mapa no sea solo
-//      un camino lineal y haya varias rutas posibles.
+// How it does it (algorithm):
+//   1) Clears all existing connections for each room.
+//   2) Randomly shuffles the order of the rooms (Fisher-Yates shuffle).
+//   3) Builds a "random spanning tree":
+//        each room (starting from the 2nd) connects to ONE random previous room.
+//        This guarantees that the graph is connected (all rooms reachable).
+//   4) Adds extra random edges (n/2) so the map is not just a linear
+//      path and multiple alternative routes exist.
 //
-// IMPORTANTE: las conexiones son bidireccionales (si A->B entonces B->A).
+// IMPORTANT: Connections are bidirectional (if A->B, then B->A).
 //
-// Notas:
-//   - rand() debe estar seedeado antes de llamar a este metodo
-//     (eso se hace en main.cpp con srand(time(NULL)))
-//   - Las conexiones definidas en rooms.txt se vuelven irrelevantes
-//     porque este metodo las sobreescribe completamente
+// Notes:
+//   - rand() must be seeded before calling this method
+//     (this is handled in main.cpp using srand(time(NULL))).
+//   - The connections defined in rooms.txt become irrelevant
+//     because this method completely overwrites them.
 // =====================================================================
 void WorldLoader::randomizeConnections(Station* station)
 {
