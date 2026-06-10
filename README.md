@@ -2,7 +2,7 @@
 
 **Course:** EIF204 - Programming II  
 **University:** Universidad Nacional de Costa Rica — Escuela de Informática  
-**Team:** Lucia Garay Garcia and Jose Pablo Sanchez Ramirez 
+**Team:** Lucia Garay Garcia and Jose Pablo Sanchez Ramirez  
 **Period:** I Ciclo 2026  
 **Due date:** June 11, 2026
 
